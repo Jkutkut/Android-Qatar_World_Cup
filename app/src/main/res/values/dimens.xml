@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--  ***************  DIMENS  ***************  -->
+    <dimen name="normal_margin">15dp</dimen>
+
+    <!--  Text size  -->
+    <dimen name="text_size_title">24dp</dimen>
+    <dimen name="text_size_sub_title">18dp</dimen>
+    <dimen name="text_size_normal">14dp</dimen>
+    <dimen name="text_size_btn">@dimen/text_size_normal</dimen>
+    <dimen name="text_size_txtv">@dimen/text_size_normal</dimen>
+    <dimen name="text_size_etxt">@dimen/text_size_normal</dimen>
+
+    <!--  Button  -->
+    <dimen name="btn_radius">10dp</dimen>
+</resources>
