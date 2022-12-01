@@ -3,4 +3,5 @@
     <string name="add_result_btn">Add Result</string>
     <string name="see_results_btn">See Results</string>
     <string name="qatar_logo_description">qatar_logo</string>
+    <string name="fap_icon_description">Toggle between dark to light modes.</string>
 </resources>
