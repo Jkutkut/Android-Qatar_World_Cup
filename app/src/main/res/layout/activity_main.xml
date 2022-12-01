@@ -1,36 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    style="@style/activity_style"
     tools:context=".MainActivity"
     android:background="?attr/colorOnPrimary">
-
-    <RelativeLayout
-        style="@style/activity_style">
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:src="@drawable/qatar_logo"
-            android:contentDescription="@string/qatar_logo_description" />
-        <LinearLayout
-            style="@style/container.centered"
-            android:orientation="vertical"
-            android:layout_centerInParent="true">
-            <com.jkutkut.custom.CustomButton
-                android:id="@+id/btnAddResult"
-                style="@style/btn_style.qatar"
-                android:text="@string/add_result_btn"/>
-            <com.jkutkut.custom.CustomButton
-                android:id="@+id/btnSeeResults"
-                style="@style/btn_style.qatar"
-                android:text="@string/see_results_btn"/>
-        </LinearLayout>
-    </RelativeLayout>
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/qatar_logo_description"
+        android:src="@drawable/qatar_logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+    <LinearLayout
+        style="@style/container.centered"
+        android:layout_centerInParent="true"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toRightOf="parent"
+        app:layout_constraintRight_toLeftOf="parent">
+        <com.jkutkut.custom.CustomButton
+            android:id="@+id/btnAddResult"
+            style="@style/btn_style.qatar"
+            android:text="@string/add_result_btn" />
+        <com.jkutkut.custom.CustomButton
+            android:id="@+id/btnSeeResults"
+            style="@style/btn_style.qatar"
+            android:text="@string/see_results_btn" />
+    </LinearLayout>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fabMode"
         style="@style/floating_btn_style.qatar"
+        android:contentDescription="@string/fap_icon_description"
         android:src="@drawable/ic_mode"
-        android:contentDescription="@string/fap_icon_description" />
-</RelativeLayout>
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
