@@ -1,14 +1,10 @@
 package com.jkutkut.qatar_wold_cup;
 
-import androidx.appcompat.widget.AppCompatButton;
-
-import android.graphics.PorterDuff;
 import android.os.Bundle;
-import android.view.MotionEvent;
-import android.view.View;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.jkutkut.custom.CustomActivity;
+import com.jkutkut.custom.CustomButton;
 
 public class MainActivity extends CustomActivity {
 
@@ -18,8 +14,8 @@ public class MainActivity extends CustomActivity {
         setContentView(R.layout.activity_main);
 
         // ********* UI Components *********
-        AppCompatButton btnAddResult = findViewById(R.id.btnAddResult);
-        AppCompatButton btnSeeResults = findViewById(R.id.btnSeeResults);
+        CustomButton btnAddResult = findViewById(R.id.btnAddResult);
+        CustomButton btnSeeResults = findViewById(R.id.btnSeeResults);
         FloatingActionButton fabMode = findViewById(R.id.fabMode);
 
         // ********* Set Listeners *********
@@ -34,6 +30,10 @@ public class MainActivity extends CustomActivity {
         });
 
         fabMode.setOnClickListener(this::toggleDarkLightMode);
+
+        // ********* Animations *********
+        btnAddResult.setClickFeedback(getColor(R.color.qatar_light));
+        btnSeeResults.setClickFeedback(getColor(R.color.qatar_light));
     }
 
 }

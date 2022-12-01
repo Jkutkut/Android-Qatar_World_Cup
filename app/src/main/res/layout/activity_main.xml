@@ -17,11 +17,11 @@
             style="@style/container.centered"
             android:orientation="vertical"
             android:layout_centerInParent="true">
-            <androidx.appcompat.widget.AppCompatButton
+            <com.jkutkut.custom.CustomButton
                 android:id="@+id/btnAddResult"
                 style="@style/btn_style.qatar"
                 android:text="@string/add_result_btn"/>
-            <androidx.appcompat.widget.AppCompatButton
+            <com.jkutkut.custom.CustomButton
                 android:id="@+id/btnSeeResults"
                 style="@style/btn_style.qatar"
                 android:text="@string/see_results_btn"/>

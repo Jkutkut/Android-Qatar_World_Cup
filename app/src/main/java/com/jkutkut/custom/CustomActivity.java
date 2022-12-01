@@ -17,7 +17,7 @@ public class CustomActivity extends AppCompatActivity {
         ).show();
     }
 
-    protected void toggleDarkLightMode(View view) {
+    protected void toggleDarkLightMode(View ignoredView) {
         if (darkMode())
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         else
