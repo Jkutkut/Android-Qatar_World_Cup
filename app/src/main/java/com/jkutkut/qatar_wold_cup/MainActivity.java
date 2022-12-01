@@ -1,5 +1,6 @@
 package com.jkutkut.qatar_wold_cup;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -20,8 +21,8 @@ public class MainActivity extends CustomActivity {
 
         // ********* Set Listeners *********
         btnAddResult.setOnClickListener(v -> {
-            alert("TODO");
-            // TODO
+            Intent i = new Intent(getBaseContext(), AddResult.class);
+            startActivity(i);
         });
 
         btnSeeResults.setOnClickListener(v -> {

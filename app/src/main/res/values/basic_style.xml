@@ -15,11 +15,12 @@
     <style name="activity_style">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">match_parent</item>
-<!--        <item name="android:layout_marginTop">0dp</item>-->
-<!--        <item name="android:layout_marginBottom">@dimen/normal_margin</item>-->
-<!--        <item name="android:layout_marginLeft">@dimen/normal_margin</item>-->
-<!--        <item name="android:layout_marginRight">@dimen/normal_margin</item>-->
         <item name="android:padding">@dimen/normal_margin</item>
+        <item name="android:paddingTop">0dp</item>
+    </style>
+
+    <style name="activity_style.background">
+        <item name="android:background">?attr/colorOnPrimary</item>
     </style>
 
     <style name="activity_background">
@@ -50,6 +51,11 @@
         <item name="android:textAllCaps">false</item>
     </style>
 
+    <style name="btn_style.clear" parent="btn_style">
+        <item name="android:background">#00ffffff</item>
+        <item name="android:textColor">?attr/colorOnSecondary</item>
+    </style>
+
     <!--  Text View  -->
     <style name="txtv_style" parent="use_margin.top">
         <item name="android:layout_width">match_parent</item>
@@ -64,10 +70,11 @@
 
     <!--  Edit Text  -->
     <style name="etxt_style" parent="use_margin.top">
-        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textSize">@dimen/text_size_etxt</item>
         <item name="minHeight">48dp</item>
+        <item name="android:background"></item>
     </style>
 
     <!--  FloatingButton  -->
@@ -75,9 +82,11 @@
         <item name="borderWidth">0dp</item>
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-<!--        <item name="android:layout_alignParentBottom">true</item>-->
-<!--        <item name="android:layout_alignParentEnd">true</item>-->
-<!--        <item name="android:layout_marginBottom">@dimen/normal_margin</item>-->
-<!--        <item name="android:layout_marginEnd">@dimen/normal_margin</item>-->
+    </style>
+
+    <!--  DatePicker  -->
+    <style name="date_picker_style">
+        <item name="android:calendarViewShown">false</item>
+        <item name="android:spinnersShown">true</item>
     </style>
 </resources>
