@@ -13,24 +13,41 @@ import java.util.Calendar;
 public class AddResult extends AppCompatActivity {
 
     // ********* UI Components *********
-    Button btnDate;
-    Button btnTime;
-    final Calendar calendar = Calendar.getInstance();
+    private Button btnDate;
+    private Button btnTime;
+
+    // ********* DateTime Utils *********
+    private SimpleDateFormat sdfDate;
+    private SimpleDateFormat sdfTime;
+    private Calendar calendar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_result);
 
+        // ********* DateTime Utils *********
+        calendar = Calendar.getInstance();
+        sdfDate = new SimpleDateFormat(getString(R.string.date_format));
+        sdfTime = new SimpleDateFormat(getString(R.string.time_format));
+
+        // ********* UI Components *********
         btnDate = findViewById(R.id.btnDate);
         btnTime = findViewById(R.id.btnTime);
 
+        // ********* Set Listeners *********
         DatePickerDialog.OnDateSetListener date = (view, year, month, day) -> {
             calendar.set(Calendar.YEAR, year);
             calendar.set(Calendar.MONTH,month);
             calendar.set(Calendar.DAY_OF_MONTH,day);
             updateDate();
         };
+        TimePickerDialog.OnTimeSetListener time = (view, hour, minute) -> {
+            calendar.set(Calendar.HOUR_OF_DAY, hour);
+            calendar.set(Calendar.MINUTE, minute);
+            updateTime();
+        };
+
         btnDate.setOnClickListener(view -> new DatePickerDialog(
             AddResult.this,
             date,
@@ -38,12 +55,6 @@ public class AddResult extends AppCompatActivity {
             calendar.get(Calendar.MONTH),
             calendar.get(Calendar.DAY_OF_MONTH)
         ).show());
-
-        TimePickerDialog.OnTimeSetListener time = (view, hour, minute) -> {
-            calendar.set(Calendar.HOUR_OF_DAY, hour);
-            calendar.set(Calendar.MINUTE, minute);
-            updateTime();
-        };
         btnTime.setOnClickListener(view -> new TimePickerDialog(
             AddResult.this,
             time,
@@ -58,12 +69,10 @@ public class AddResult extends AppCompatActivity {
     }
 
     private void updateDate() {
-        SimpleDateFormat dateFormat=new SimpleDateFormat(getString(R.string.date_format));
-        btnDate.setText(dateFormat.format(calendar.getTime()));
+        btnDate.setText(sdfDate.format(calendar.getTime()));
     }
 
     private void updateTime() {
-        SimpleDateFormat dateFormat=new SimpleDateFormat(getString(R.string.time_format));
-        btnTime.setText(dateFormat.format(calendar.getTime()));
+        btnTime.setText(sdfTime.format(calendar.getTime()));
     }
 }
