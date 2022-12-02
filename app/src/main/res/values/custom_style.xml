@@ -51,8 +51,17 @@
         <item name="android:layout_centerVertical">true</item>
     </style>
 
+    <style name="container.table" parent="container">
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="container.table.row" parent="container">
+        <item name="android:orientation">horizontal</item>
+        <item name="android:layout_marginTop">0dp</item>
+    </style>
+
     <!--  Button  -->
-    <style name="btn_style">
+    <style name="btn_style" parent="Widget.AppCompat.Button">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:background">@drawable/round_btn</item>

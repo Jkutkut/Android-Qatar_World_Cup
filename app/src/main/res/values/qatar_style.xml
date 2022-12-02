@@ -9,4 +9,8 @@
         <item name="android:backgroundTint">?attr/secondary_main_color</item>
         <item name="tint">?attr/text_with_bg</item>
     </style>
+
+    <style name="btn_table_element" parent="btn_style.clear">
+        <item name="android:layout_margin">@dimen/normal_margin</item>
+    </style>
 </resources>

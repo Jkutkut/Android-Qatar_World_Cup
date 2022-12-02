@@ -1,10 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="match_phase">
-        <item>@string/match_phase_octavos</item>
-        <item>@string/match_phase_cuartos</item>
-        <item>@string/match_phase_semifinales</item>
-        <item>@string/match_phase_tercer_puesto</item>
+        <item>@string/match_phase_round_of_16</item>
+        <item>@string/match_phase_quarterfinals</item>
+        <item>@string/match_phase_semifinals</item>
+        <item>@string/match_phase_third_place</item>
         <item>@string/match_phase_final</item>
+    </string-array>
+
+    <string-array name="teams">
+        <item>@string/team_germany</item>
+        <item>@string/team_saudi_arabia</item>
+        <item>@string/team_argentina</item>
+        <item>@string/team_australia</item>
+        <item>@string/team_belgium</item>
+        <item>@string/team_brazil</item>
+        <item>@string/team_cameroon</item>
+        <item>@string/team_canada</item>
+        <item>@string/team_south_korea</item>
+        <item>@string/team_costa_rica</item>
+        <item>@string/team_croatia</item>
+        <item>@string/team_denmark</item>
+        <item>@string/team_ecuador</item>
+        <item>@string/team_spain</item>
+        <item>@string/team_usa</item>
+        <item>@string/team_france</item>
+        <item>@string/team_gales</item>
+        <item>@string/team_ghana</item>
+        <item>@string/team_holland</item>
+        <item>@string/team_uk</item>
+        <item>@string/team_iran</item>
+        <item>@string/team_japan</item>
+        <item>@string/team_morocco</item>
+        <item>@string/team_mexico</item>
+        <item>@string/team_poland</item>
+        <item>@string/team_portugal</item>
+        <item>@string/team_qatar</item>
+        <item>@string/team_senegal</item>
+        <item>@string/team_serbia</item>
+        <item>@string/team_Switzerland</item>
+        <item>@string/team_tunisia</item>
+        <item>@string/team_uruguay</item>
     </string-array>
 </resources>

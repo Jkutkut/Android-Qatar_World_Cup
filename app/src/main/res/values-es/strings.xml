@@ -1,3 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="match_phase_final">Final</string>
+    <string name="match_phase_third_place">Tercer puesto</string>
+    <string name="match_phase_semifinals">Semifinales</string>
+    <string name="match_phase_quarterfinals">Cuartos</string>
+    <string name="match_phase_round_of_16">Octavos</string>
+
+    <string name="team_germany">Alemania</string>
+    <string name="team_saudi_arabia">Arabia Saudí</string>
+    <string name="team_argentina">Argentina</string>
+    <string name="team_australia">Australia</string>
+    <string name="team_belgium">Bélgica</string>
+    <string name="team_brazil">Brasil</string>
+    <string name="team_cameroon">Camerún</string>
+    <string name="team_canada">Canadá</string>
+    <string name="team_south_korea">Corea del Sur</string>
+    <string name="team_costa_rica">Costa Rica</string>
+    <string name="team_croatia">Croacia</string>
+    <string name="team_denmark">Dinamarca</string>
+    <string name="team_ecuador">Ecuador</string>
+    <string name="team_spain">España</string>
+    <string name="team_usa">Estados Unidos</string>
+    <string name="team_france">Francia</string>
+    <string name="team_gales">Gales</string>
+    <string name="team_ghana">Ghana</string>
+    <string name="team_holland">Holanda</string>
+    <string name="team_uk">Inglaterra</string>
+    <string name="team_iran">Irán</string>
+    <string name="team_japan">Japón</string>
+    <string name="team_morocco">Marruecos</string>
+    <string name="team_mexico">México</string>
+    <string name="team_poland">Polonia</string>
+    <string name="team_portugal">Portugal</string>
+    <string name="team_qatar">Qatar</string>
+    <string name="team_senegal">Senegal</string>
+    <string name="team_serbia">Serbia</string>
+    <string name="team_Switzerland">Suiza</string>
+    <string name="team_tunisia">Túnez</string>
+    <string name="team_uruguay">Uruguay</string>
 </resources>

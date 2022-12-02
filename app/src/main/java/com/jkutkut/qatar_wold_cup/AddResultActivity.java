@@ -3,10 +3,14 @@ package com.jkutkut.qatar_wold_cup;
 import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 
 import com.jkutkut.custom.CustomActivity;
 import com.jkutkut.custom.CustomButton;
@@ -41,6 +45,18 @@ public class AddResultActivity extends CustomActivity {
         calendar = Calendar.getInstance();
         sdfDate = new SimpleDateFormat(getString(R.string.date_format));
         sdfTime = new SimpleDateFormat(getString(R.string.time_format));
+
+        // ********* Team Selector *********
+        ActivityResultLauncher<Intent> teamSelectorLauncher = registerForActivityResult(
+            new ActivityResultContracts.StartActivityForResult(),
+            result -> {
+                if (result.getResultCode() == RESULT_OK) {
+                    Intent data = result.getData();
+                }
+
+                alert("Back from Team Selector");
+            }
+        );
 
         // ********* UI Components *********
         btnDate = findViewById(R.id.btnDate);
@@ -84,7 +100,10 @@ public class AddResultActivity extends CustomActivity {
         ).show());
 
         btnTeam1.setOnClickListener(view -> {
-            // TODO
+            Intent intent = new Intent(AddResultActivity.this, CountrySelectionActivity.class);
+//            intent.putExtra("team", 1);
+//            intent.putExtra("opponent", btnTeam2.getText().toString());
+            teamSelectorLauncher.launch(intent);
         });
         btnTeam2.setOnClickListener(view -> {
             // TODO
