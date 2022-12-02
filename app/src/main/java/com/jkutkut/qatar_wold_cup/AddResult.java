@@ -2,15 +2,18 @@ package com.jkutkut.qatar_wold_cup;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.os.Bundle;
 import android.widget.Button;
 
+import com.jkutkut.custom.CustomActivity;
+
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
-public class AddResult extends AppCompatActivity {
+public class AddResult extends CustomActivity {
 
     // ********* UI Components *********
     private Button btnDate;
@@ -22,9 +25,9 @@ public class AddResult extends AppCompatActivity {
     private Calendar calendar;
 
     @Override
+    @SuppressLint("MissingSuperCall") // We call super.onCreate on the parent class
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_result);
+        super.onCreate(savedInstanceState, R.layout.activity_add_result);
 
         // ********* DateTime Utils *********
         calendar = Calendar.getInstance();
