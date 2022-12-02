@@ -14,6 +14,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <AutoCompleteTextView
+        android:id="@+id/autocTxtViewCountry"
+        style="@style/etxt_style"
+        android:layout_width="0dp"
+        android:layout_marginTop="@dimen/normal_margin"
+        android:hint="Select the country"
+        app:layout_constraintTop_toBottomOf="@id/fabMode"
+        app:layout_constraintBottom_toTopOf="@id/flowCountries"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
     <androidx.constraintlayout.helper.widget.Flow
         android:id="@+id/flowCountries"
         android:layout_width="0dp"
@@ -28,18 +40,8 @@
         app:flow_wrapMode="aligned"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/etxtCountrySelected"
-        app:layout_constraintTop_toBottomOf="@+id/fabMode" />
-
-    <EditText
-        android:id="@+id/etxtCountrySelected"
-        style="@style/etxt_style"
-        android:layout_width="0dp"
-        android:layout_marginBottom="@dimen/normal_margin"
-        android:hint="Select the country"
-        app:layout_constraintBottom_toTopOf="@id/btns"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/autocTxtViewCountry"
+        app:layout_constraintBottom_toTopOf="@id/btns"/>
 
     <LinearLayout
         android:id="@+id/btns"

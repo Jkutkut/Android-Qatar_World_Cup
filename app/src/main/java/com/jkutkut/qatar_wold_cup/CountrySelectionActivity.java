@@ -2,11 +2,11 @@ package com.jkutkut.qatar_wold_cup;
 
 import androidx.constraintlayout.helper.widget.Flow;
 import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.constraintlayout.widget.ConstraintSet;
 
 import android.os.Bundle;
 import android.view.View;
-import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -18,7 +18,7 @@ public class CountrySelectionActivity extends CustomActivity implements View.OnC
     // ********* UI Components *********
     ConstraintLayout constraintLayoutActivity;
     private Flow flowCountries;
-    private EditText etxtCountrySelected;
+    private AutoCompleteTextView autocTxtViewCountry;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,10 +28,16 @@ public class CountrySelectionActivity extends CustomActivity implements View.OnC
         // ********* UI Components *********
         constraintLayoutActivity = findViewById(R.id.constraintLayoutActivity);
         flowCountries = findViewById(R.id.flowCountries);
-        etxtCountrySelected = findViewById(R.id.etxtCountrySelected);
+        autocTxtViewCountry = findViewById(R.id.autocTxtViewCountry);
 
         // ********* Init Components *********
         initFlowCountries();
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(
+            this,
+            android.R.layout.simple_list_item_1,
+            getResources().getStringArray(R.array.teams)
+        );
+        autocTxtViewCountry.setAdapter(adapter);
     }
 
     private void initFlowCountries() {
@@ -58,6 +64,6 @@ public class CountrySelectionActivity extends CustomActivity implements View.OnC
     @Override
     public void onClick(View v) {
         String country = ((Button) v).getText().toString();
-        etxtCountrySelected.setText(country);
+        autocTxtViewCountry.setText(country);
     }
 }
