@@ -7,8 +7,11 @@ import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Spinner;
 
 import com.jkutkut.custom.CustomActivity;
+import com.jkutkut.custom.CustomButton;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -18,6 +21,13 @@ public class AddResult extends CustomActivity {
     // ********* UI Components *********
     private Button btnDate;
     private Button btnTime;
+    private Button btnTeam1;
+    private Button btnTeam2;
+    private Spinner spnPhase;
+    private EditText etxtFirstTeam;
+    private EditText etxtSecondTeam;
+    private CustomButton btnSave;
+    private CustomButton btnClear;
 
     // ********* DateTime Utils *********
     private SimpleDateFormat sdfDate;
@@ -61,6 +71,7 @@ public class AddResult extends CustomActivity {
         ).show());
         btnTime.setOnClickListener(view -> new TimePickerDialog(
             AddResult.this,
+            // TODO
             time,
             calendar.get(Calendar.HOUR_OF_DAY),
             calendar.get(Calendar.MINUTE),
