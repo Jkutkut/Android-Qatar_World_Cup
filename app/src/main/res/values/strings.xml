@@ -49,4 +49,5 @@
     <string name="team_Switzerland">Switzerland</string>
     <string name="team_tunisia">Tunisia</string>
     <string name="team_uruguay">Uruguay</string>
+    <string name="country_selection_error">Please select a correct country</string>
 </resources>

@@ -20,6 +20,13 @@ import java.util.Calendar;
 
 public class AddResultActivity extends CustomActivity {
 
+    // TODO Fix UI to be more user friendly
+    // TODO Add click feedback to btnTeam1 and btnTeam2
+
+    public static final String TEAM_SIDE = "teamSide";
+    private static final int TEAM_1 = 1;
+    private static final int TEAM_2 = 2;
+
     // ********* UI Components *********
     private Button btnDate;
     private Button btnTime;
@@ -36,6 +43,9 @@ public class AddResultActivity extends CustomActivity {
     private SimpleDateFormat sdfTime;
     private Calendar calendar;
 
+    // ********* Activity Result *********
+    ActivityResultLauncher<Intent> teamSelectorLauncher;
+
     @Override
     @SuppressLint("MissingSuperCall") // We call super.onCreate on the parent class
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,14 +57,18 @@ public class AddResultActivity extends CustomActivity {
         sdfTime = new SimpleDateFormat(getString(R.string.time_format));
 
         // ********* Team Selector *********
-        ActivityResultLauncher<Intent> teamSelectorLauncher = registerForActivityResult(
+        teamSelectorLauncher = registerForActivityResult(
             new ActivityResultContracts.StartActivityForResult(),
             result -> {
                 if (result.getResultCode() == RESULT_OK) {
-                    Intent data = result.getData();
+                    Intent i = result.getData();
+                    Bundle data = i.getExtras();
+                    Button btnTeam = (data.getInt(TEAM_SIDE) == TEAM_1) ? btnTeam1 : btnTeam2;
+                    // TODO bug: always updating btnTeam2
+                    if (data.getString(CountrySelectionActivity.COUNTRY_KEY) != null)
+                        btnTeam.setText(data.getString(CountrySelectionActivity.COUNTRY_KEY));
+                    alert("Team Selected correctly");
                 }
-
-                alert("Back from Team Selector");
             }
         );
 
@@ -100,13 +114,10 @@ public class AddResultActivity extends CustomActivity {
         ).show());
 
         btnTeam1.setOnClickListener(view -> {
-            Intent intent = new Intent(AddResultActivity.this, CountrySelectionActivity.class);
-//            intent.putExtra("team", 1);
-//            intent.putExtra("opponent", btnTeam2.getText().toString());
-            teamSelectorLauncher.launch(intent);
+            ask4team(TEAM_1);
         });
         btnTeam2.setOnClickListener(view -> {
-            // TODO
+            ask4team(TEAM_2);
         });
         btnSave.setOnClickListener(view -> {
             // TODO
@@ -117,6 +128,15 @@ public class AddResultActivity extends CustomActivity {
         // ********* Init values *********
         updateDate();
         updateTime();
+        btnSave.setClickFeedback(getColor(R.color.qatar_light));
+        btnClear.setClickFeedback(getColor(R.color.qatar_light));
+    }
+
+    private void ask4team(int team) {
+        Intent intent = new Intent(this, CountrySelectionActivity.class);
+        intent.putExtra(TEAM_SIDE, team);
+        // TODO Prevent from selecting the same team twice
+        teamSelectorLauncher.launch(intent);
     }
 
     // ********* Utils *********
