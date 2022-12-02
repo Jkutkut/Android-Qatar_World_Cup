@@ -61,6 +61,7 @@
 
     <style name="btn_style.clear" parent="btn_style">
         <item name="android:background">#00ffffff</item>
+        <item name="android:textColor">?attr/text_no_bg</item>
     </style>
 
     <!--  Text View  -->
@@ -104,12 +105,34 @@
 <!--    </style>-->
 
 
-<!--    <style name="DatePickerTheme" parent="Theme.AppCompat.Light.Dialog">-->
-<!--        <item name="colorAccent">?attr/text_no_bg</item>-->
-<!--        <item name="buttonBarNegativeButtonStyle">@style/NegativeButtonStyle</item>-->
-<!--    </style>-->
+    <style name="date_picker_style">
+<!--   android:calendarTextColor	The text color list of the calendar.
+android:calendarViewShown	Whether the calendar view is shown.
+android:datePickerMode	Defines the look of the widget.
+android:dayOfWeekBackground	The background color for the header's day of week.
+android:dayOfWeekTextAppearance	The text color for the header's day of week.
+android:endYear	The last year (inclusive), for example "2010".
+android:firstDayOfWeek	The first day of week according to Calendar.
+android:headerBackground	The background for the selected date header.
+android:headerDayOfMonthTextAppearance	The text appearance for the day of month (ex.
+android:headerMonthTextAppearance	The text appearance for the month (ex.
+android:headerYearTextAppearance	The text appearance for the year (ex.
+android:maxDate	The maximal date shown by this calendar view in mm/dd/yyyy format.
+android:minDate	The minimal date shown by this calendar view in mm/dd/yyyy format.
+android:spinnersShown	Whether the spinners are shown.
+android:startYear	The first year (inclusive), for example "1940".
+android:yearListItemTextAppearance	The list year's text appearance in the list.
+android:yearListSelectorColor	The list year's selected circle color in the list.      -->
 
-<!--    <style name="NegativeButtonStyle" parent="Widget.AppCompat.Button.ButtonBar.AlertDialog">-->
-<!--        <item name="android:textColor">?attr/text_no_bg</item>-->
-<!--    </style>-->
+        <item name="android:layout_gravity">center</item>
+
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+
+        <item name="android:calendarTextColor">@android:color/holo_green_dark</item>
+
+<!--        <item name="android:headerBackground">?attr/colorOnBackground</item>-->
+        <!--    TODO style    -->
+    </style>
+    <!--  TODO style timePicker  -->
 </resources>

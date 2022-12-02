@@ -53,6 +53,7 @@ public class AddResult extends CustomActivity {
 
         btnDate.setOnClickListener(view -> new DatePickerDialog(
             AddResult.this,
+            R.style.date_picker_style, // TODO
             date,
             calendar.get(Calendar.YEAR),
             calendar.get(Calendar.MONTH),
