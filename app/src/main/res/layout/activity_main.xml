@@ -13,23 +13,26 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
+
     <LinearLayout
         style="@style/container.centered"
         android:layout_centerInParent="true"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintLeft_toRightOf="parent"
-        app:layout_constraintRight_toLeftOf="parent">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
         <com.jkutkut.custom.CustomButton
             android:id="@+id/btnAddResult"
             style="@style/btn_style.qatar"
             android:text="@string/add_result_btn" />
+
         <com.jkutkut.custom.CustomButton
+            android:id="@+id/btnSeeResults"
+            style="@style/btn_style.qatar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="@style/btn_style.qatar"
-            android:id="@+id/btnSeeResults"
             android:text="@string/see_results_btn" />
     </LinearLayout>
 

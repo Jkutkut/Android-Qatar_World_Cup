@@ -13,6 +13,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
+        android:id="@+id/container_datetime"
         style="@style/container"
         android:orientation="horizontal"
         android:weightSum="10"
@@ -32,6 +33,117 @@
             android:layout_width="wrap_content"
             android:layout_weight="5"
             android:text="@string/time_format"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/container_phase"
+        style="@style/container"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="10"
+        app:flow_horizontalAlign="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/container_datetime">
+
+        <TextView
+            style="@style/txtv_style"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="5"
+            android:gravity="center"
+            android:text="Phase:" />
+
+        <Spinner
+            android:id="@+id/spnMatchPhase"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="5"
+            android:entries="@array/match_phase" />
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/container_goals"
+        style="@style/container"
+        android:orientation="horizontal"
+        app:flow_horizontalAlign="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/container_phase">
+
+        <EditText
+            android:id="@+id/etxtGoalsTeam1"
+            style="@style/etxt_style"
+            android:hint="Goals first team"
+            android:inputType="numberDecimal"
+            app:layout_constraintEnd_toStartOf="@id/txtv_goal_separator"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <!--    TODO: Change hint based on selected team    -->
+        <!--    TODO: You can not select the same team    -->
+        <TextView
+            android:id="@+id/txtv_goal_separator"
+            style="@style/txtv_style"
+            android:layout_width="wrap_content"
+            android:hint="-"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/etxtGoalsTeam2"
+            style="@style/etxt_style"
+            android:hint="Goals second team"
+            android:inputType="numberDecimal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/txtv_goal_separator"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:id="@+id/container_teams"
+        style="@style/container"
+        android:orientation="horizontal"
+        android:weightSum="10"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/container_goals">
+
+        <Button
+            android:id="@+id/btnTeam1"
+            style="@style/btn_style.clear"
+            android:layout_width="wrap_content"
+            android:layout_weight="5"
+            android:text="Select team 1" />
+
+        <Button
+            android:id="@+id/btnTeam2"
+            style="@style/btn_style.clear"
+            android:layout_width="wrap_content"
+            android:layout_weight="5"
+            android:text="Select team 2" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/container_buttons"
+        style="@style/container"
+        android:orientation="horizontal"
+        android:weightSum="10"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/container_teams">
+        <com.jkutkut.custom.CustomButton
+            android:id="@+id/btnSave"
+            style="@style/btn_style.qatar"
+            android:layout_weight="5"
+            android:text="Save Result"/>
+
+        <com.jkutkut.custom.CustomButton
+            android:id="@+id/btnClear"
+            style="@style/btn_style.qatar"
+            android:layout_weight="5"
+            android:text="Clear form"/>
     </LinearLayout>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton

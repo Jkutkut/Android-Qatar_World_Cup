@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="match_phase">
+        <item>@string/match_phase_octavos</item>
+        <item>@string/match_phase_cuartos</item>
+        <item>@string/match_phase_semifinales</item>
+        <item>@string/match_phase_tercer_puesto</item>
+        <item>@string/match_phase_final</item>
+    </string-array>
+</resources>

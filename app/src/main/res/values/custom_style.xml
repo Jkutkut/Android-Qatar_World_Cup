@@ -43,6 +43,8 @@
     <style name="container" parent="use_margin.top">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
+        <item name="android:showDividers">middle</item>
+        <item name="android:divider">@drawable/divider</item>
     </style>
 
     <style name="container.centered" parent="container">
@@ -50,7 +52,7 @@
     </style>
 
     <!--  Button  -->
-    <style name="btn_style" parent="use_margin.top">
+    <style name="btn_style">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:background">@drawable/round_btn</item>
@@ -65,7 +67,7 @@
     </style>
 
     <!--  Text View  -->
-    <style name="txtv_style" parent="use_margin.top">
+    <style name="txtv_style">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textSize">@dimen/text_size_txtv</item>
@@ -77,7 +79,7 @@
     </style>
 
     <!--  Edit Text  -->
-    <style name="etxt_style" parent="use_margin.top">
+        <style name="etxt_style">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textSize">@dimen/text_size_etxt</item>
