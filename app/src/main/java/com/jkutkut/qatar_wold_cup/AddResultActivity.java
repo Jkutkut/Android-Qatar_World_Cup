@@ -64,7 +64,6 @@ public class AddResultActivity extends CustomActivity {
                     Intent i = result.getData();
                     Bundle data = i.getExtras();
                     Button btnTeam = (data.getInt(TEAM_SIDE) == TEAM_1) ? btnTeam1 : btnTeam2;
-                    // TODO bug: always updating btnTeam2
                     if (data.getString(CountrySelectionActivity.COUNTRY_KEY) != null)
                         btnTeam.setText(data.getString(CountrySelectionActivity.COUNTRY_KEY));
                     alert("Team Selected correctly");

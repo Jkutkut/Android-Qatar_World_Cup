@@ -27,14 +27,14 @@ public class CountrySelectionActivity extends CustomActivity implements View.OnC
     private CustomButton btnCancel;
 
     // ********* Activity Result *********
-    private String teamSide;
+    private int teamSide;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_country_selection);
 
-        teamSide = getIntent().getStringExtra(AddResultActivity.TEAM_SIDE);
+        teamSide = getIntent().getIntExtra(AddResultActivity.TEAM_SIDE, -1);
 
         // ********* UI Components *********
         constraintLayoutActivity = findViewById(R.id.constraintLayoutActivity);
