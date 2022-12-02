@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     style="@style/activity_style.background"
-    tools:context=".AddResult">
+    tools:context=".AddResultActivity">
 
     <TextView
         android:id="@+id/textView"
@@ -33,7 +34,34 @@
             android:layout_width="wrap_content"
             android:layout_weight="5"
             android:text="@string/time_format"/>
+<!--    TODO: Fix btn sizes    -->
     </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/container_teams"
+        style="@style/container"
+        android:orientation="horizontal"
+        android:weightSum="10"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/container_datetime">
+
+        <Button
+            android:id="@+id/btnTeam1"
+            style="@style/btn_style.clear"
+            android:layout_width="wrap_content"
+            android:layout_weight="5"
+            android:text="@string/btnTeamDefault" />
+
+        <Button
+            android:id="@+id/btnTeam2"
+            style="@style/btn_style.clear"
+            android:layout_width="wrap_content"
+            android:layout_weight="5"
+            android:text="@string/btnTeamDefault" />
+    </LinearLayout>
+
 
     <LinearLayout
         android:id="@+id/container_phase"
@@ -44,7 +72,7 @@
         app:flow_horizontalAlign="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/container_datetime">
+        app:layout_constraintTop_toBottomOf="@+id/container_teams">
 
         <TextView
             style="@style/txtv_style"
@@ -55,7 +83,7 @@
             android:text="Phase:" />
 
         <Spinner
-            android:id="@+id/spnMatchPhase"
+            android:id="@+id/spnPhase"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="5"
@@ -98,32 +126,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/txtv_goal_separator"
             app:layout_constraintTop_toTopOf="parent" />
-
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <LinearLayout
-        android:id="@+id/container_teams"
-        style="@style/container"
-        android:orientation="horizontal"
-        android:weightSum="10"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/container_goals">
-
-        <Button
-            android:id="@+id/btnTeam1"
-            style="@style/btn_style.clear"
-            android:layout_width="wrap_content"
-            android:layout_weight="5"
-            android:text="Select team 1" />
-
-        <Button
-            android:id="@+id/btnTeam2"
-            style="@style/btn_style.clear"
-            android:layout_width="wrap_content"
-            android:layout_weight="5"
-            android:text="Select team 2" />
-    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/container_buttons"
@@ -132,7 +135,7 @@
         android:weightSum="10"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/container_teams">
+        app:layout_constraintTop_toBottomOf="@+id/container_goals">
         <com.jkutkut.custom.CustomButton
             android:id="@+id/btnSave"
             style="@style/btn_style.qatar"

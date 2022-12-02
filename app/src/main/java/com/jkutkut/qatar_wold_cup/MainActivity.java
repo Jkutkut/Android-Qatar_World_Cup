@@ -4,7 +4,6 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.jkutkut.custom.CustomActivity;
 import com.jkutkut.custom.CustomButton;
 
@@ -21,7 +20,7 @@ public class MainActivity extends CustomActivity {
 
         // ********* Set Listeners *********
         btnAddResult.setOnClickListener(v -> {
-            Intent i = new Intent(getBaseContext(), AddResult.class);
+            Intent i = new Intent(getBaseContext(), AddResultActivity.class);
             startActivity(i);
         });
 

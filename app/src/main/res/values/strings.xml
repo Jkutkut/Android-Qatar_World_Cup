@@ -13,4 +13,5 @@
     <string name="match_phase_semifinales">Semifinales</string>
     <string name="match_phase_tercer_puesto">Tercer puesto</string>
     <string name="match_phase_final">Final</string>
+    <string name="btnTeamDefault">Select team</string>
 </resources>

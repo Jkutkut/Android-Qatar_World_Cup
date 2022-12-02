@@ -13,7 +13,14 @@
         android:theme="@style/Theme.Qatar_Wold_Cup"
         tools:targetApi="31">
         <activity
-            android:name=".AddResult"
+            android:name=".CountrySelectionActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".AddResultActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
