@@ -26,8 +26,10 @@
             style="@style/btn_style.qatar"
             android:text="@string/add_result_btn" />
         <com.jkutkut.custom.CustomButton
-            android:id="@+id/btnSeeResults"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             style="@style/btn_style.qatar"
+            android:id="@+id/btnSeeResults"
             android:text="@string/see_results_btn" />
     </LinearLayout>
 
