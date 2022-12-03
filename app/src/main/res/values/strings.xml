@@ -7,7 +7,8 @@
     <string name="add_result_title">Add a result</string>
     <string name="date_format" translatable="false">dd/MM/yyyy</string>
     <string name="time_format" translatable="false">HH:mm</string>
-    <string name="btnTeamDefault">Select team</string>
+    <string name="btnTeamDefault">@string/select_team</string>
+    <string name="select_team">Select team</string>
     <string name="select_country_title">Team Selection</string>
     <string name="country_selection_error">Please select a correct country</string>
 
@@ -50,4 +51,5 @@
     <string name="team_tunisia">Tunisia</string>
     <string name="team_uruguay">Uruguay</string>
     <string name="country_selection_error_same_country">You can not choose the same team twice</string>
+    <string name="see_results_title">See results by country</string>
 </resources>
