@@ -13,6 +13,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:id="@+id/date_title"
+        style="@style/txtv_style.subtitle"
+        android:layout_marginTop="@dimen/normal_margin"
+        android:text="@string/date_title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/fabMode" />
+
     <LinearLayout
         android:id="@+id/container_datetime"
         style="@style/container"
@@ -20,7 +28,7 @@
         android:weightSum="10"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/add_result_title">
+        app:layout_constraintTop_toBottomOf="@id/date_title">
 
         <com.jkutkut.custom.CustomButton
             android:id="@+id/btnDate"
@@ -34,9 +42,15 @@
             android:layout_width="wrap_content"
             android:layout_weight="5"
             android:text="@string/time_format"/>
-<!--    TODO: Fix btn sizes    -->
     </LinearLayout>
 
+    <TextView
+        android:id="@+id/teams_title"
+        style="@style/txtv_style.subtitle"
+        android:layout_marginTop="@dimen/normal_margin"
+        android:text="@string/teams_title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/container_datetime" />
 
     <LinearLayout
         android:id="@+id/container_teams"
@@ -45,7 +59,7 @@
         android:weightSum="10"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/container_datetime">
+        app:layout_constraintTop_toBottomOf="@+id/teams_title">
 
         <com.jkutkut.custom.CustomButton
             android:id="@+id/btnTeam1"
@@ -57,7 +71,7 @@
         <TextView
             style="@style/txtv_style"
             android:layout_width="wrap_content"
-            android:text="vs"/>
+            android:text="@string/separator_vs" />
 
         <com.jkutkut.custom.CustomButton
             android:id="@+id/btnTeam2"
@@ -67,33 +81,30 @@
             android:text="@string/btnTeamDefault" />
     </LinearLayout>
 
+    <TextView
+        android:id="@+id/textView"
+        style="@style/txtv_style.subtitle"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="@dimen/normal_margin"
+        android:text="@string/phase_label"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/container_teams" />
 
-    <LinearLayout
-        android:id="@+id/container_phase"
-        style="@style/container"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:weightSum="10"
-        app:flow_horizontalAlign="center"
-        app:layout_constraintEnd_toEndOf="parent"
+    <Spinner
+        android:id="@+id/spnPhase"
+        style="@style/spinner_style"
+        android:layout_marginTop="@dimen/normal_margin"
+        android:entries="@array/match_phase"
+        app:layout_constraintTop_toBottomOf="@id/container_teams"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/score_title"
+        style="@style/txtv_style.subtitle"
+        android:layout_marginTop="@dimen/normal_margin"
+        android:text="@string/score_title"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/container_teams">
-
-        <TextView
-            style="@style/txtv_style"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="5"
-            android:gravity="center"
-            android:text="Phase:" />
-
-        <Spinner
-            android:id="@+id/spnPhase"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="5"
-            android:entries="@array/match_phase" />
-    </LinearLayout>
+        app:layout_constraintTop_toBottomOf="@id/spnPhase" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/container_goals"
@@ -102,23 +113,22 @@
         app:flow_horizontalAlign="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/container_phase">
+        app:layout_constraintTop_toBottomOf="@+id/score_title">
 
         <EditText
             android:id="@+id/etxtGoalsTeam1"
             style="@style/etxt_style"
-            android:hint="Goals first team"
+            android:hint="@string/etxtGoalsTeam1"
             android:inputType="numberDecimal"
             app:layout_constraintEnd_toStartOf="@id/txtv_goal_separator"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
         <!--    TODO: Change hint based on selected team    -->
-        <!--    TODO: You can not select the same team    -->
         <TextView
             android:id="@+id/txtv_goal_separator"
             style="@style/txtv_style"
             android:layout_width="wrap_content"
-            android:hint="-"
+            android:hint="@string/separator"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -126,7 +136,7 @@
         <EditText
             android:id="@+id/etxtGoalsTeam2"
             style="@style/etxt_style"
-            android:hint="Goals second team"
+            android:hint="@string/etxtGoalsTeam2"
             android:inputType="numberDecimal"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/txtv_goal_separator"
@@ -138,20 +148,21 @@
         style="@style/container"
         android:orientation="horizontal"
         android:weightSum="10"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/container_goals">
+        app:layout_constraintStart_toStartOf="parent">
+
         <com.jkutkut.custom.CustomButton
             android:id="@+id/btnSave"
             style="@style/btn_style.qatar"
             android:layout_weight="5"
-            android:text="Save Result"/>
+            android:text="@string/save_result" />
 
         <com.jkutkut.custom.CustomButton
             android:id="@+id/btnClear"
             style="@style/btn_style.qatar"
             android:layout_weight="5"
-            android:text="Clear form"/>
+            android:text="@string/clear_form" />
     </LinearLayout>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -159,6 +170,6 @@
         style="@style/floating_btn_style.qatar"
         android:contentDescription="@string/fap_icon_description"
         android:src="@drawable/ic_mode"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

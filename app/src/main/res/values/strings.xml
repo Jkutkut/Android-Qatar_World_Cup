@@ -61,4 +61,17 @@
     <string name="alert_goals_team2_invalid">The goals of the second team should be whole</string>
     <string name="error_date_in_future">The match can not ocurr in the future</string>
     <string name="alert_result_saved">Result salved</string>
+    <string name="date_title">Date and time of the match:</string>
+    <string name="teams_title">Teams:</string>
+    <string name="phase_label">Phase:</string>
+    <string name="score_title">Score:</string>
+    <string name="etxtGoalsTeam1">Goals first team</string>
+    <string name="etxtGoalsTeam2">Goals second team</string>
+    <string name="separator_vs">vs</string>
+    <string name="separator">-</string>
+    <string name="save_result">Save Result</string>
+    <string name="clear_form">Clear form</string>
+    <string name="autocTxtViewCountryHint">Select the country</string>
+    <string name="save">Save</string>
+    <string name="cancel">Cancel</string>
 </resources>

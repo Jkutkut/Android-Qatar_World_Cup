@@ -19,12 +19,11 @@
         style="@style/etxt_style"
         android:layout_width="0dp"
         android:layout_marginTop="@dimen/normal_margin"
-        android:hint="Select the country"
+        android:hint="@string/autocTxtViewCountryHint"
         app:layout_constraintTop_toBottomOf="@id/fabMode"
         app:layout_constraintBottom_toTopOf="@id/flowCountries"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
-
 
     <androidx.constraintlayout.helper.widget.Flow
         android:id="@+id/flowCountries"
@@ -56,13 +55,13 @@
             android:layout_weight="1"
             android:layout_width="wrap_content"
             style="@style/btn_style.qatar"
-            android:text="Save"/>
+            android:text="@string/save"/>
         <com.jkutkut.custom.CustomButton
             android:layout_weight="1"
             android:id="@+id/btnCancel"
             android:layout_width="wrap_content"
             style="@style/btn_style.qatar"
-            android:text="Cancel"/>
+            android:text="@string/cancel"/>
     </LinearLayout>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
