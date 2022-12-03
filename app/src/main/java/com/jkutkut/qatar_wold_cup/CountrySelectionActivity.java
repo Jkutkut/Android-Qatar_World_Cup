@@ -18,7 +18,6 @@ import java.util.Arrays;
 
 public class CountrySelectionActivity extends CustomActivity implements View.OnClickListener {
     // TODO add scroll to view in small screens
-    // TODO Change mode dark to light not working
     public static final String COUNTRY_KEY = "country";
 
     // ********* UI Components *********
@@ -32,6 +31,12 @@ public class CountrySelectionActivity extends CustomActivity implements View.OnC
     private String[] countries;
     private int teamSide;
     private String oponent;
+
+    // ********* Session *********
+    private static final String COUNTRIES_KEY = "countries";
+    private static final String TEAM_SIDE_KEY = "teamSide";
+    private static final String OPONENT_KEY = "oponent";
+//    private static final String COUNTRY_KEY = "country";
 
     @Override
     @SuppressLint("MissingSuperCall") // We call super.onCreate on the parent class
@@ -138,5 +143,24 @@ public class CountrySelectionActivity extends CustomActivity implements View.OnC
     // ********* GETTERS *********
     private String getSelectedCountry() {
         return autocTxtViewCountry.getText().toString().trim();
+    }
+
+    // ********* SESSION *********
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putStringArray(COUNTRIES_KEY, countries);
+        outState.putInt(TEAM_SIDE_KEY, teamSide);
+        outState.putString(OPONENT_KEY, oponent);
+        outState.putString(COUNTRY_KEY, getSelectedCountry());
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        countries = savedInstanceState.getStringArray(COUNTRIES_KEY);
+        teamSide = savedInstanceState.getInt(TEAM_SIDE_KEY);
+        oponent = savedInstanceState.getString(OPONENT_KEY);
+        autocTxtViewCountry.setText(savedInstanceState.getString(COUNTRY_KEY));
     }
 }

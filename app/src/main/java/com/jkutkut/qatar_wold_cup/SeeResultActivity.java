@@ -2,12 +2,10 @@ package com.jkutkut.qatar_wold_cup;
 
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
-import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -24,6 +22,9 @@ public class SeeResultActivity extends CustomActivity {
     // ********* Activity Result *********
     private String team;
     ActivityResultLauncher<Intent> teamSelectorLauncher;
+
+    // ********* Session *********
+    private static final String TEAM_KEY = "team";
 
     @Override
     @SuppressLint("MissingSuperCall") // We call super.onCreate on the parent class
@@ -77,5 +78,19 @@ public class SeeResultActivity extends CustomActivity {
         txtvCountry.setText(team);
         btnSeeResults.setText(getString(R.string.clearData));
         // TODO add results
+    }
+
+    // ********* Session *********
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putString(TEAM_KEY, team);
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        team = savedInstanceState.getString(TEAM_KEY);
+        updateUIWithTeam();
     }
 }

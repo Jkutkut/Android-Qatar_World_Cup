@@ -11,6 +11,7 @@ import android.widget.Spinner;
 
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
+import androidx.annotation.NonNull;
 
 import com.jkutkut.custom.CustomActivity;
 import com.jkutkut.custom.CustomButton;
@@ -46,6 +47,14 @@ public class AddResultActivity extends CustomActivity {
 
     // ********* Activity Result *********
     ActivityResultLauncher<Intent> teamSelectorLauncher;
+
+    // ********* Session *********
+    private static final String CALENDAR_KEY = "calendar";
+    private static final String TEAM_1_KEY = "team1";
+    private static final String TEAM_2_KEY = "team2";
+    private static final String PHASE_KEY = "phase";
+    private static final String GOALS_1_KEY = "goals1";
+    private static final String GOALS_2_KEY = "goals2";
 
     @Override
     @SuppressLint("MissingSuperCall") // We call super.onCreate on the parent class
@@ -208,5 +217,30 @@ public class AddResultActivity extends CustomActivity {
         spnPhase.setSelection(0);
         etxtGoalsTeam1.setText("");
         etxtGoalsTeam2.setText("");
+    }
+
+    // ********* Session *********
+    @Override
+    protected void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putSerializable(CALENDAR_KEY, calendar);
+        outState.putString(TEAM_1_KEY, btnTeam1.getText().toString());
+        outState.putString(TEAM_2_KEY, btnTeam2.getText().toString());
+        outState.putInt(PHASE_KEY, spnPhase.getSelectedItemPosition());
+        outState.putString(GOALS_1_KEY, etxtGoalsTeam1.getText().toString());
+        outState.putString(GOALS_2_KEY, etxtGoalsTeam2.getText().toString());
+    }
+
+    @Override
+    protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        calendar = (Calendar) savedInstanceState.getSerializable(CALENDAR_KEY);
+        updateDate();
+        updateTime();
+        btnTeam1.setText(savedInstanceState.getString(TEAM_1_KEY));
+        btnTeam2.setText(savedInstanceState.getString(TEAM_2_KEY));
+        spnPhase.setSelection(savedInstanceState.getInt(PHASE_KEY));
+        etxtGoalsTeam1.setText(savedInstanceState.getString(GOALS_1_KEY));
+        etxtGoalsTeam2.setText(savedInstanceState.getString(GOALS_2_KEY));
     }
 }
