@@ -25,8 +25,8 @@ public class MainActivity extends CustomActivity {
         });
 
         btnSeeResults.setOnClickListener(v -> {
-            alert("TODO");
-            // TODO
+            Intent i = new Intent(getBaseContext(), SeeResultActivity.class);
+            startActivity(i);
         });
 
         // ********* Animations *********
