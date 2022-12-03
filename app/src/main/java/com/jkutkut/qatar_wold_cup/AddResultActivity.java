@@ -21,17 +21,16 @@ import java.util.Calendar;
 public class AddResultActivity extends CustomActivity {
 
     // TODO Fix UI to be more user friendly
-    // TODO Add click feedback to btnTeam1 and btnTeam2
 
     public static final String TEAM_SIDE = "teamSide";
     private static final int TEAM_1 = 1;
     private static final int TEAM_2 = 2;
 
     // ********* UI Components *********
-    private Button btnDate;
-    private Button btnTime;
-    private Button btnTeam1;
-    private Button btnTeam2;
+    private CustomButton btnDate;
+    private CustomButton btnTime;
+    private CustomButton btnTeam1;
+    private CustomButton btnTeam2;
     private Spinner spnPhase;
     private EditText etxtGoalsTeam1;
     private EditText etxtGoalsTeam2;
@@ -62,11 +61,11 @@ public class AddResultActivity extends CustomActivity {
             result -> {
                 if (result.getResultCode() == RESULT_OK) {
                     Intent i = result.getData();
+                    if (i == null) return;
                     Bundle data = i.getExtras();
                     Button btnTeam = (data.getInt(TEAM_SIDE) == TEAM_1) ? btnTeam1 : btnTeam2;
                     if (data.getString(CountrySelectionActivity.COUNTRY_KEY) != null)
                         btnTeam.setText(data.getString(CountrySelectionActivity.COUNTRY_KEY));
-                    alert("Team Selected correctly");
                 }
             }
         );
@@ -112,12 +111,8 @@ public class AddResultActivity extends CustomActivity {
             true
         ).show());
 
-        btnTeam1.setOnClickListener(view -> {
-            ask4team(TEAM_1);
-        });
-        btnTeam2.setOnClickListener(view -> {
-            ask4team(TEAM_2);
-        });
+        btnTeam1.setOnClickListener(view -> ask4team(TEAM_1));
+        btnTeam2.setOnClickListener(view -> ask4team(TEAM_2));
         btnSave.setOnClickListener(view -> {
             // TODO
             alert("TODO");
@@ -127,6 +122,12 @@ public class AddResultActivity extends CustomActivity {
         // ********* Init values *********
         updateDate();
         updateTime();
+
+        // TODO set click feedback
+//        btnDate.setClickFeedback(getColor(R.attr.btn_clear_clicked));
+//        btnTime.setClickFeedback(getColor(R.attr.btn_clear_clicked));
+//        btnTeam1.setClickFeedback(getColor(R.attr.btn_clear_clicked));
+//        btnTeam2.setClickFeedback(getColor(R.attr.btn_clear_clicked));
         btnSave.setClickFeedback(getColor(R.color.qatar_light));
         btnClear.setClickFeedback(getColor(R.color.qatar_light));
     }

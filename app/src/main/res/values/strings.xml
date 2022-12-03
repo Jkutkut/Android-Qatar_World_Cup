@@ -5,11 +5,11 @@
     <string name="qatar_logo_description">qatar_logo</string>
     <string name="fap_icon_description">Toggle between dark to light modes.</string>
     <string name="add_result_title">Add a result</string>
-    <string name="date_format">dd/MM/yyyy</string>
-    <string name="time_format">HH:mm</string>
+    <string name="date_format" translatable="false">dd/MM/yyyy</string>
+    <string name="time_format" translatable="false">HH:mm</string>
     <string name="btnTeamDefault">Select team</string>
     <string name="select_country_title">Team Selection</string>
-    <string name="btnCountryDefault">TODO COUNTRY</string>
+    <string name="country_selection_error">Please select a correct country</string>
 
     <string name="match_phase_final">Final</string>
     <string name="match_phase_third_place">Third place</string>
@@ -49,5 +49,4 @@
     <string name="team_Switzerland">Switzerland</string>
     <string name="team_tunisia">Tunisia</string>
     <string name="team_uruguay">Uruguay</string>
-    <string name="country_selection_error">Please select a correct country</string>
 </resources>

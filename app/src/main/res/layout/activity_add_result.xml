@@ -22,13 +22,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/add_result_title">
 
-        <Button
+        <com.jkutkut.custom.CustomButton
             android:id="@+id/btnDate"
             style="@style/btn_style.clear"
             android:layout_width="wrap_content"
             android:layout_weight="5"
             android:text="@string/date_format"/>
-        <Button
+        <com.jkutkut.custom.CustomButton
             android:id="@+id/btnTime"
             style="@style/btn_style.clear"
             android:layout_width="wrap_content"
@@ -47,14 +47,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/container_datetime">
 
-        <Button
+        <com.jkutkut.custom.CustomButton
             android:id="@+id/btnTeam1"
             style="@style/btn_style.clear"
             android:layout_width="wrap_content"
             android:layout_weight="5"
             android:text="@string/btnTeamDefault" />
 
-        <Button
+        <TextView
+            style="@style/txtv_style"
+            android:layout_width="wrap_content"
+            android:text="vs"/>
+
+        <com.jkutkut.custom.CustomButton
             android:id="@+id/btnTeam2"
             style="@style/btn_style.clear"
             android:layout_width="wrap_content"

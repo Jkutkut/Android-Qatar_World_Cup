@@ -15,7 +15,7 @@ import com.jkutkut.custom.CustomActivity;
 import com.jkutkut.custom.CustomButton;
 
 public class CountrySelectionActivity extends CustomActivity implements View.OnClickListener {
-
+    // TODO add scroll to view in small screens
     // TODO Change mode dark to light not working
     public static final String COUNTRY_KEY = "country";
 

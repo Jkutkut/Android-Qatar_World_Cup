@@ -4,6 +4,7 @@
     <attr format="color" name="btn_background"/>
     <attr format="color" name="text_no_bg"/>
     <attr format="color" name="text_with_bg"/>
+    <attr format="color" name="btn_clear_clicked"/>
     <attr format="color" name="primary_main_color"/>
     <attr format="color" name="secondary_main_color"/>
 

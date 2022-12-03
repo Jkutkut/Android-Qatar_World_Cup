@@ -4,6 +4,7 @@
         <item name="colorOnBackground">@color/white</item>
         <item name="text_no_bg">@color/black</item>
         <item name="text_with_bg">@color/white</item>
+        <item name="btn_clear_clicked">@android:color/white</item>
         <item name="primary_main_color">@color/qatar_light</item>
         <item name="secondary_main_color">@color/qatar_dark</item>
 
