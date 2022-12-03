@@ -3,6 +3,7 @@ package com.jkutkut.qatar_wold_cup;
 import androidx.constraintlayout.helper.widget.Flow;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -33,9 +34,9 @@ public class CountrySelectionActivity extends CustomActivity implements View.OnC
     private String oponent;
 
     @Override
+    @SuppressLint("MissingSuperCall") // We call super.onCreate on the parent class
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_country_selection);
+        super.onCreate(savedInstanceState, R.layout.activity_country_selection);
 
         countries = getResources().getStringArray(R.array.teams);
         teamSide = getIntent().getIntExtra(AddResultActivity.TEAM_SIDE, -1);

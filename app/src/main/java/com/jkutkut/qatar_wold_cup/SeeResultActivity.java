@@ -4,17 +4,21 @@ import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-public class SeeResultActivity extends AppCompatActivity {
+import com.jkutkut.custom.CustomActivity;
+import com.jkutkut.custom.CustomButton;
+
+public class SeeResultActivity extends CustomActivity {
 
     // ********* UI Components *********
     private TextView txtvCountry;
-    private Button btnSeeResults;
+    private CustomButton btnSeeResults;
     private LinearLayout containerResult;
 
     // ********* Activity Result *********
@@ -22,9 +26,9 @@ public class SeeResultActivity extends AppCompatActivity {
     ActivityResultLauncher<Intent> teamSelectorLauncher;
 
     @Override
+    @SuppressLint("MissingSuperCall") // We call super.onCreate on the parent class
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_see_result);
+        super.onCreate(savedInstanceState, R.layout.activity_see_result);
 
         team = null;
         teamSelectorLauncher = registerForActivityResult(
@@ -47,6 +51,9 @@ public class SeeResultActivity extends AppCompatActivity {
 
         // ********* Set Listeners *********
         btnSeeResults.setOnClickListener(v -> handleSeeResults());
+
+        // ********* Animations *********
+        btnSeeResults.setClickFeedback(getColor(R.color.qatar_light));
     }
 
     private void handleSeeResults() {
