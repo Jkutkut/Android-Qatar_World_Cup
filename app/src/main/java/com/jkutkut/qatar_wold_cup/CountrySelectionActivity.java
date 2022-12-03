@@ -9,10 +9,11 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
-import android.widget.EditText;
 
 import com.jkutkut.custom.CustomActivity;
 import com.jkutkut.custom.CustomButton;
+
+import java.util.Arrays;
 
 public class CountrySelectionActivity extends CustomActivity implements View.OnClickListener {
     // TODO add scroll to view in small screens
@@ -27,14 +28,31 @@ public class CountrySelectionActivity extends CustomActivity implements View.OnC
     private CustomButton btnCancel;
 
     // ********* Activity Result *********
+    private String[] countries;
     private int teamSide;
+    private String oponent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_country_selection);
 
+        countries = getResources().getStringArray(R.array.teams);
         teamSide = getIntent().getIntExtra(AddResultActivity.TEAM_SIDE, -1);
+        oponent = getIntent().getStringExtra(AddResultActivity.OPONENT);
+
+        if (oponent != null) {
+            // Override countries without opponent
+            String[] countriesWithoutOponent = new String[countries.length - 1];
+            int index = 0;
+            for (String country : countries)
+                if (!country.equals(oponent))
+                    countriesWithoutOponent[index++] = country;
+            countries = countriesWithoutOponent;
+        }
+
+        // Sort countries
+        Arrays.sort(countries);
 
         // ********* UI Components *********
         constraintLayoutActivity = findViewById(R.id.constraintLayoutActivity);
@@ -60,7 +78,6 @@ public class CountrySelectionActivity extends CustomActivity implements View.OnC
 
     private void initFlowCountries() {
         CustomButton btnCountry;
-        String[] countries = getCountries();
         int[] btnIds = new int[countries.length];
         for (int i = 0; i < countries.length; i++) {
             // TODO fix style of btns
@@ -85,8 +102,15 @@ public class CountrySelectionActivity extends CustomActivity implements View.OnC
             return;
         }
 
+        String country = getSelectedCountry();
+
+        if (oponent != null && oponent.equals(country)) {
+            alert(getString(R.string.country_selection_error_same_country));
+            return;
+        }
+
         Intent intent = new Intent();
-        intent.putExtra(COUNTRY_KEY, autocTxtViewCountry.getText().toString().trim());
+        intent.putExtra(COUNTRY_KEY, country);
         intent.putExtra(AddResultActivity.TEAM_SIDE, teamSide);
         setResult(RESULT_OK, intent);
         finish();
@@ -102,7 +126,7 @@ public class CountrySelectionActivity extends CustomActivity implements View.OnC
     // ********* UTILS *********
     private boolean validCountrySelected() {
         String country = getSelectedCountry();
-        for (String team : getCountries()) {
+        for (String team : countries) {
             if (team.equals(country)) {
                 return true;
             }
@@ -113,9 +137,5 @@ public class CountrySelectionActivity extends CustomActivity implements View.OnC
     // ********* GETTERS *********
     private String getSelectedCountry() {
         return autocTxtViewCountry.getText().toString().trim();
-    }
-
-    private String[] getCountries() {
-        return getResources().getStringArray(R.array.teams);
     }
 }

@@ -25,6 +25,7 @@ public class AddResultActivity extends CustomActivity {
     public static final String TEAM_SIDE = "teamSide";
     private static final int TEAM_1 = 1;
     private static final int TEAM_2 = 2;
+    public static final String OPONENT = "oponent";
 
     // ********* UI Components *********
     private CustomButton btnDate;
@@ -135,7 +136,12 @@ public class AddResultActivity extends CustomActivity {
     private void ask4team(int team) {
         Intent intent = new Intent(this, CountrySelectionActivity.class);
         intent.putExtra(TEAM_SIDE, team);
-        // TODO Prevent from selecting the same team twice
+
+        String oponent = ((team == TEAM_1) ? btnTeam2 : btnTeam1).getText().toString();
+        if (oponent.equals(getString(R.string.btnTeamDefault)))
+            oponent = null;
+        intent.putExtra(OPONENT, oponent);
+
         teamSelectorLauncher.launch(intent);
     }
 

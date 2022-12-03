@@ -9,7 +9,6 @@
     </string-array>
 
     <string-array name="teams">
-<!--    TODO sort them alpha    -->
         <item>@string/team_germany</item>
         <item>@string/team_saudi_arabia</item>
         <item>@string/team_argentina</item>
