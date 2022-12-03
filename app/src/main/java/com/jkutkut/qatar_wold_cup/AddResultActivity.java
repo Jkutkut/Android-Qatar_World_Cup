@@ -14,6 +14,7 @@ import androidx.activity.result.contract.ActivityResultContracts;
 
 import com.jkutkut.custom.CustomActivity;
 import com.jkutkut.custom.CustomButton;
+import com.jkutkut.qatar_wold_cup.data.MatchResult;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -114,10 +115,7 @@ public class AddResultActivity extends CustomActivity {
 
         btnTeam1.setOnClickListener(view -> ask4team(TEAM_1));
         btnTeam2.setOnClickListener(view -> ask4team(TEAM_2));
-        btnSave.setOnClickListener(view -> {
-            // TODO
-            alert("TODO");
-        });
+        btnSave.setOnClickListener(view -> saveResult());
         btnClear.setOnClickListener(view -> clearForm());
 
         // ********* Init values *********
@@ -131,6 +129,52 @@ public class AddResultActivity extends CustomActivity {
 //        btnTeam2.setClickFeedback(getColor(R.attr.btn_clear_clicked));
         btnSave.setClickFeedback(getColor(R.color.qatar_light));
         btnClear.setClickFeedback(getColor(R.color.qatar_light));
+    }
+
+    private void saveResult() {
+        if (calendar.getTimeInMillis() > System.currentTimeMillis()) {
+            alert(getString(R.string.error_date_in_future));
+            return;
+        }
+        String datetime = String.format("%s %s", btnDate.getText(), btnTime.getText());
+        String[] teams = {btnTeam1.getText().toString(), btnTeam2.getText().toString()};
+        int[] idErrors = {R.string.alert_team1_missing, R.string.alert_team2_missing};
+        // Note: No need to check if they're the same team
+        for (int i = 0; i < 2; i++) {
+            if (teams[i].equals(getString(R.string.btnTeamDefault))) {
+                alert(getString(idErrors[i]));
+                return;
+            }
+        }
+        idErrors = new int[]{R.string.alert_goals_team1_missing, R.string.alert_goals_team2_missing};
+        String[] goalsStr = {etxtGoalsTeam1.getText().toString(), etxtGoalsTeam2.getText().toString()};
+        for (int i = 0; i < 2; i++) {
+            if (goalsStr[i].trim().isEmpty()) {
+                alert(getString(idErrors[i]));
+                return;
+            }
+        }
+        int[] goals = new int[2];
+        idErrors = new int[]{R.string.alert_goals_team1_invalid, R.string.alert_goals_team2_invalid};
+        for (int i = 0; i < 2; i++) {
+            try {
+                goals[i] = Integer.parseInt(goalsStr[i]);
+            } catch (NumberFormatException e) {
+                alert(getString(idErrors[i]));
+                return;
+            }
+        }
+        QatarApplication app = (QatarApplication) getApplicationContext();
+        app.getResultData().addResult(new MatchResult(
+            spnPhase.getSelectedItem().toString(),
+            teams[0],
+            teams[1],
+            goals[0],
+            goals[1],
+            datetime
+        ));
+        alert(getString(R.string.alert_result_saved));
+        finish();
     }
 
     private void ask4team(int team) {

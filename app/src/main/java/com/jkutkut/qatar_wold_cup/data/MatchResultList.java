@@ -10,6 +10,10 @@ public class MatchResultList {
         loadData();
     }
 
+    public void addResult(MatchResult result) {
+        matchResults.add(result);
+    }
+
     private void loadData() {
         Object[][] data = {
             {"Fase de grupos", "20/11/2022 17:00", "Qatar", 0, "Ecuador", 2},

@@ -53,4 +53,12 @@
     <string name="country_selection_error_same_country">You can not choose the same team twice</string>
     <string name="see_results_title">See results by country</string>
     <string name="clearData">Clear data</string>
+    <string name="alert_team1_missing">Please, select the first team</string>
+    <string name="alert_team2_missing">Please, select the second team</string>
+    <string name="alert_goals_team1_missing">Please add the score for the first team</string>
+    <string name="alert_goals_team2_missing">Please add the score for the second team</string>
+    <string name="alert_goals_team1_invalid">The goals of the first team should be whole</string>
+    <string name="alert_goals_team2_invalid">The goals of the second team should be whole</string>
+    <string name="error_date_in_future">The match can not ocurr in the future</string>
+    <string name="alert_result_saved">Result salved</string>
 </resources>
