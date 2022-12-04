@@ -17,6 +17,11 @@ import com.jkutkut.custom.CustomButton;
 
 import java.util.Arrays;
 
+/**
+ * Class responsible for the selection of the team.
+ *
+ * @author jkutkut
+ */
 public class CountrySelectionActivity extends CustomActivity implements View.OnClickListener {
 
     public static final String COUNTRY_KEY = "country";
@@ -31,12 +36,12 @@ public class CountrySelectionActivity extends CustomActivity implements View.OnC
     // ********* Activity Result *********
     private String[] countries;
     private int teamSide;
-    private String oponent;
+    private String opponent;
 
     // ********* Session *********
     private static final String COUNTRIES_KEY = "countries";
     private static final String TEAM_SIDE_KEY = "teamSide";
-    private static final String OPONENT_KEY = "oponent";
+    private static final String OPPONENT_KEY = "opponent";
 //    private static final String COUNTRY_KEY = "country";
 
     @Override
@@ -46,20 +51,18 @@ public class CountrySelectionActivity extends CustomActivity implements View.OnC
 
         countries = getResources().getStringArray(R.array.teams);
         teamSide = getIntent().getIntExtra(AddResultActivity.TEAM_SIDE, -1);
-        oponent = getIntent().getStringExtra(AddResultActivity.OPPONENT);
+        opponent = getIntent().getStringExtra(AddResultActivity.OPPONENT);
 
-        if (oponent != null) {
+        if (opponent != null) {
             // Override countries without opponent
-            String[] countriesWithoutOponent = new String[countries.length - 1];
+            String[] countriesWithoutOpponent = new String[countries.length - 1];
             int index = 0;
             for (String country : countries)
-                if (!country.equals(oponent))
-                    countriesWithoutOponent[index++] = country;
-            countries = countriesWithoutOponent;
+                if (!country.equals(opponent))
+                    countriesWithoutOpponent[index++] = country;
+            countries = countriesWithoutOpponent;
         }
-
-        // Sort countries
-        Arrays.sort(countries);
+        Arrays.sort(countries); // Sort countries alphabetically in all languages
 
         // ********* UI Components *********
         constraintLayoutActivity = findViewById(R.id.constraintLayoutActivity);
@@ -87,6 +90,9 @@ public class CountrySelectionActivity extends CustomActivity implements View.OnC
         btnCancel.setClickFeedback(getColor(R.color.qatar_light));
     }
 
+    /**
+     * Dynamically creates the buttons for the countries.
+     */
     private void initFlowCountries() {
         CustomButton btnCountry;
         int[] btnIds = new int[countries.length];
@@ -103,19 +109,22 @@ public class CountrySelectionActivity extends CustomActivity implements View.OnC
         flowCountries.setReferencedIds(btnIds);
     }
 
+    /**
+     * Verifies that the user has selected a correct country and returns it to the
+     * previous activity.
+     */
     private void handleSave() {
         if (!validCountrySelected()) {
             alert(getString(R.string.country_selection_error));
             return;
         }
-
         String country = getSelectedCountry();
-
-        if (oponent != null && oponent.equals(country)) {
+        if (opponent != null && opponent.equals(country)) {
+            // Note: Even though the button will never appear, the user can still type the
+            // same team twice.
             alert(getString(R.string.country_selection_error_same_country));
             return;
         }
-
         Intent intent = new Intent();
         intent.putExtra(COUNTRY_KEY, country);
         intent.putExtra(AddResultActivity.TEAM_SIDE, teamSide);
@@ -124,6 +133,11 @@ public class CountrySelectionActivity extends CustomActivity implements View.OnC
     }
 
     // ********* IMPLEMENTS *********
+    /**
+     * Handles all the clicks of the buttons.
+     * @param v The view that was clicked.
+     * Note: This way, all listeners are simplified with this method.
+     */
     @Override
     public void onClick(View v) {
         String country = ((Button) v).getText().toString();
@@ -131,6 +145,11 @@ public class CountrySelectionActivity extends CustomActivity implements View.OnC
     }
 
     // ********* UTILS *********
+
+    /**
+     * Checks if the user has selected a valid country.
+     * @return The result of the verification.
+     */
     private boolean validCountrySelected() {
         String country = getSelectedCountry();
         for (String team : countries) {
@@ -142,6 +161,10 @@ public class CountrySelectionActivity extends CustomActivity implements View.OnC
     }
 
     // ********* GETTERS *********
+
+    /**
+     * @return The country selected by the user.
+     */
     private String getSelectedCountry() {
         return autocTxtViewCountry.getText().toString().trim();
     }
@@ -152,7 +175,7 @@ public class CountrySelectionActivity extends CustomActivity implements View.OnC
         super.onSaveInstanceState(outState);
         outState.putStringArray(COUNTRIES_KEY, countries);
         outState.putInt(TEAM_SIDE_KEY, teamSide);
-        outState.putString(OPONENT_KEY, oponent);
+        outState.putString(OPPONENT_KEY, opponent);
         outState.putString(COUNTRY_KEY, getSelectedCountry());
     }
 
@@ -161,7 +184,7 @@ public class CountrySelectionActivity extends CustomActivity implements View.OnC
         super.onRestoreInstanceState(savedInstanceState);
         countries = savedInstanceState.getStringArray(COUNTRIES_KEY);
         teamSide = savedInstanceState.getInt(TEAM_SIDE_KEY);
-        oponent = savedInstanceState.getString(OPONENT_KEY);
+        opponent = savedInstanceState.getString(OPPONENT_KEY);
         autocTxtViewCountry.setText(savedInstanceState.getString(COUNTRY_KEY));
     }
 }
