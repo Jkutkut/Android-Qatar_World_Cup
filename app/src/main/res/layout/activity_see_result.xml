@@ -13,7 +13,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
-        android:id="@+id/linearLayout"
+        android:id="@+id/container_query"
         style="@style/container"
         android:orientation="horizontal"
         android:weightSum="10"
@@ -36,14 +36,34 @@
             android:text="@string/selectTeam" />
     </LinearLayout>
 
+    <TextView
+        android:id="@+id/txtv_result"
+        style="@style/txtv_style.subtitle"
+        android:layout_marginTop="@dimen/normal_margin"
+        android:text="Results:"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/container_query" />
+
+<!--    <androidx.fragment.app.FragmentContainerView-->
+<!--        android:id="@+id/fragmentContainer"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="@dimen/normal_margin"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/txtv_result"-->
+<!--        android:name="com.jkutkut.qatar_wold_cup.ResultFragment"-->
+<!--        tools:layout="@layout/fragment_result" />-->
+
     <LinearLayout
-        android:id="@+id/containerResult"
+        android:id="@+id/fragmentContainer"
         style="@style/container"
         android:layout_marginTop="@dimen/normal_margin"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/txtv_result"/>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fabMode"

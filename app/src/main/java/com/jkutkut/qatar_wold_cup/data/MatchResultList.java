@@ -14,6 +14,14 @@ public class MatchResultList {
         matchResults.add(result);
     }
 
+    public ArrayList<MatchResult> getResultsByTeam(String team) {
+        ArrayList<MatchResult> results = new ArrayList<>();
+        for (MatchResult match : matchResults)
+            if (match.teamPlayed(team))
+                results.add(match);
+        return results;
+    }
+
     private void loadData() {
         Object[][] data = {
             {"Fase de grupos", "20/11/2022 17:00", "Qatar", 0, "Ecuador", 2},
@@ -59,9 +67,6 @@ public class MatchResultList {
                 (Integer) row[5],
                 (String) row[1]
             ));
-        }
-        for (MatchResult matchResult : matchResults) {
-            System.out.println(matchResult);
         }
     }
 }

@@ -60,4 +60,8 @@ public class MatchResult {
                 ", date='" + date + '\'' +
                 '}';
     }
+
+    public boolean teamPlayed(String team) {
+        return team1.equalsIgnoreCase(team) || team2.equalsIgnoreCase(team);
+    }
 }

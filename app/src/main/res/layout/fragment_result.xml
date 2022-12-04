@@ -1,0 +1,457 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/container"
+    android:orientation="vertical"
+    tools:context=".ResultFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/txtvPhase"
+            style="@style/txtv_style"
+            android:layout_width="wrap_content"
+            android:text="phase"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txtvDateTime"
+            style="@style/txtv_style"
+            android:layout_width="wrap_content"
+            android:text="22/22/2222 22:22"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txtvTeam1"
+            style="@style/txtv_style"
+            android:layout_width="wrap_content"
+            android:text="España"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtvPhase" />
+
+        <TextView
+            android:id="@+id/txtvScore1"
+            style="@style/txtv_style"
+            android:layout_width="wrap_content"
+            android:layout_marginEnd="@dimen/normal_margin"
+            android:text="10"
+            app:layout_constraintEnd_toStartOf="@+id/separator"
+            app:layout_constraintTop_toBottomOf="@id/txtvPhase" />
+
+        <TextView
+            android:id="@+id/separator"
+            style="@style/txtv_style"
+            android:layout_width="wrap_content"
+            android:text="-"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtvPhase" />
+
+        <TextView
+            android:id="@+id/txtvScore2"
+            style="@style/txtv_style"
+            android:layout_width="wrap_content"
+            android:layout_marginStart="@dimen/normal_margin"
+            android:text="10"
+            app:layout_constraintStart_toEndOf="@+id/separator"
+            app:layout_constraintTop_toBottomOf="@id/txtvPhase" />
+
+        <TextView
+            android:id="@+id/txtvTeam2"
+            style="@style/txtv_style"
+            android:layout_width="wrap_content"
+            android:text="España"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtvPhase" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+<!--    <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content">-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/phase2"-->
+<!--            style="@style/txtv_style"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:text="phase"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/datetime2"-->
+<!--            style="@style/txtv_style"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:text="22/22/2222 22:22"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/team21"-->
+<!--            style="@style/txtv_style"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:text="España"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/phase2" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/score21"-->
+<!--            style="@style/txtv_style"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_marginEnd="@dimen/normal_margin"-->
+<!--            android:text="10"-->
+<!--            app:layout_constraintEnd_toStartOf="@+id/separator2"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/phase2" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/separator2"-->
+<!--            style="@style/txtv_style"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:text="-"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/phase2" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/score22"-->
+<!--            style="@style/txtv_style"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_marginStart="@dimen/normal_margin"-->
+<!--            android:text="10"-->
+<!--            app:layout_constraintStart_toEndOf="@+id/separator2"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/phase2" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/team22"-->
+<!--            style="@style/txtv_style"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:text="España"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/phase2" />-->
+<!--    </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+<!--    <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content">-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/phase3"-->
+<!--            style="@style/txtv_style"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:text="phase"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/datetime3"-->
+<!--            style="@style/txtv_style"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:text="22/22/2222 22:22"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/team31"-->
+<!--            style="@style/txtv_style"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:text="España"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/phase3" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/score31"-->
+<!--            style="@style/txtv_style"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_marginEnd="@dimen/normal_margin"-->
+<!--            android:text="10"-->
+<!--            app:layout_constraintEnd_toStartOf="@+id/separator3"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/phase3" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/separator3"-->
+<!--            style="@style/txtv_style"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:text="-"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/phase3" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/score32"-->
+<!--            style="@style/txtv_style"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_marginStart="@dimen/normal_margin"-->
+<!--            android:text="10"-->
+<!--            app:layout_constraintStart_toEndOf="@+id/separator3"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/phase3" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/team32"-->
+<!--            style="@style/txtv_style"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:text="España"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/phase3" />-->
+<!--    </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+<!--    <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content">-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/phase4"-->
+<!--            style="@style/txtv_style"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:text="phase"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/datetime4"-->
+<!--            style="@style/txtv_style"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:text="22/22/2222 22:22"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/team41"-->
+<!--            style="@style/txtv_style"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:text="España"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/phase4" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/score41"-->
+<!--            style="@style/txtv_style"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_marginEnd="@dimen/normal_margin"-->
+<!--            android:text="10"-->
+<!--            app:layout_constraintEnd_toStartOf="@+id/separator4"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/phase4" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/separator4"-->
+<!--            style="@style/txtv_style"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:text="-"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/phase4" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/score42"-->
+<!--            style="@style/txtv_style"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_marginStart="@dimen/normal_margin"-->
+<!--            android:text="10"-->
+<!--            app:layout_constraintStart_toEndOf="@+id/separator4"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/phase4" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/team42"-->
+<!--            style="@style/txtv_style"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:text="España"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/phase4" />-->
+<!--    </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+<!--    <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content">-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/phase5"-->
+<!--            style="@style/txtv_style"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:text="phase"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/datetime5"-->
+<!--            style="@style/txtv_style"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:text="22/22/2222 22:22"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/team51"-->
+<!--            style="@style/txtv_style"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:text="España"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/phase5" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/score51"-->
+<!--            style="@style/txtv_style"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_marginEnd="@dimen/normal_margin"-->
+<!--            android:text="10"-->
+<!--            app:layout_constraintEnd_toStartOf="@+id/separator5"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/phase5" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/separator5"-->
+<!--            style="@style/txtv_style"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:text="-"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/phase5" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/score52"-->
+<!--            style="@style/txtv_style"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_marginStart="@dimen/normal_margin"-->
+<!--            android:text="10"-->
+<!--            app:layout_constraintStart_toEndOf="@+id/separator5"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/phase5" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/team52"-->
+<!--            style="@style/txtv_style"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:text="España"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/phase5" />-->
+<!--    </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+<!--    <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content">-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/phase6"-->
+<!--            style="@style/txtv_style"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:text="phase"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/datetime6"-->
+<!--            style="@style/txtv_style"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:text="22/22/2222 22:22"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/team61"-->
+<!--            style="@style/txtv_style"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:text="España"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/phase6" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/score61"-->
+<!--            style="@style/txtv_style"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_marginEnd="@dimen/normal_margin"-->
+<!--            android:text="10"-->
+<!--            app:layout_constraintEnd_toStartOf="@+id/separator6"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/phase6" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/separator6"-->
+<!--            style="@style/txtv_style"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:text="-"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/phase6" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/score62"-->
+<!--            style="@style/txtv_style"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_marginStart="@dimen/normal_margin"-->
+<!--            android:text="10"-->
+<!--            app:layout_constraintStart_toEndOf="@+id/separator6"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/phase6" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/team62"-->
+<!--            style="@style/txtv_style"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:text="España"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/phase6" />-->
+<!--    </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+<!--    <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content">-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/phase7"-->
+<!--            style="@style/txtv_style"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:text="phase"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/datetime7"-->
+<!--            style="@style/txtv_style"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:text="22/22/2222 22:22"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/team71"-->
+<!--            style="@style/txtv_style"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:text="España"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/phase7" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/score71"-->
+<!--            style="@style/txtv_style"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_marginEnd="@dimen/normal_margin"-->
+<!--            android:text="10"-->
+<!--            app:layout_constraintEnd_toStartOf="@+id/separator7"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/phase7" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/separator7"-->
+<!--            style="@style/txtv_style"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:text="-"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/phase7" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/score72"-->
+<!--            style="@style/txtv_style"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_marginStart="@dimen/normal_margin"-->
+<!--            android:text="10"-->
+<!--            app:layout_constraintStart_toEndOf="@+id/separator7"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/phase7" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/team72"-->
+<!--            style="@style/txtv_style"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:text="España"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/phase7" />-->
+<!--    </androidx.constraintlayout.widget.ConstraintLayout>-->
+</LinearLayout>

@@ -2,6 +2,9 @@ package com.jkutkut.qatar_wold_cup;
 
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
+import androidx.fragment.app.FragmentContainerView;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -11,13 +14,16 @@ import android.widget.TextView;
 
 import com.jkutkut.custom.CustomActivity;
 import com.jkutkut.custom.CustomButton;
+import com.jkutkut.qatar_wold_cup.data.MatchResult;
+import com.jkutkut.qatar_wold_cup.data.MatchResultList;
 
 public class SeeResultActivity extends CustomActivity {
 
     // ********* UI Components *********
     private TextView txtvCountry;
     private CustomButton btnSeeResults;
-    private LinearLayout containerResult;
+    private LinearLayout fragmentContainer;
+    private FragmentManager fm;
 
     // ********* Activity Result *********
     private String team;
@@ -48,7 +54,8 @@ public class SeeResultActivity extends CustomActivity {
         // ********* UI Components *********
         txtvCountry = findViewById(R.id.txtvCountry);
         btnSeeResults = findViewById(R.id.btnSeeResults);
-        containerResult = findViewById(R.id.containerResult);
+        fragmentContainer = findViewById(R.id.fragmentContainer);
+        fm = getSupportFragmentManager();
 
         // ********* Set Listeners *********
         btnSeeResults.setOnClickListener(v -> handleSeeResults());
@@ -70,14 +77,22 @@ public class SeeResultActivity extends CustomActivity {
         team = null;
         txtvCountry.setText(getString(R.string.selectTeam));
         btnSeeResults.setText(getString(R.string.selectTeam));
-        containerResult.removeAllViews();
+        fragmentContainer.removeAllViews();
     }
 
     private void updateUIWithTeam() {
         if (team == null) return;
         txtvCountry.setText(team);
         btnSeeResults.setText(getString(R.string.clearData));
-        // TODO add results
+
+        QatarApplication app = (QatarApplication) getApplication();
+        MatchResultList data = app.getResultData();
+        fragmentContainer.removeAllViews();
+        FragmentTransaction ft = fm.beginTransaction();
+        for (MatchResult result : data.getResultsByTeam(team)) {
+            ft.add(R.id.fragmentContainer, ResultFragment.newInstance(result));
+        }
+        ft.commit();
     }
 
     // ********* Session *********
