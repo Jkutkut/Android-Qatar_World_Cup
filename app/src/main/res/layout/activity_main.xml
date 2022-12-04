@@ -6,7 +6,6 @@
     style="@style/activity_style.background"
     tools:context=".MainActivity">
 <!--  TODO Horizontal views  -->
-<!--  TODO spanish version  -->
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -43,6 +42,6 @@
         style="@style/floating_btn_style.qatar"
         android:contentDescription="@string/fap_icon_description"
         android:src="@drawable/ic_mode"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -19,7 +19,7 @@
         android:weightSum="10"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/see_results_title">
+        app:layout_constraintTop_toBottomOf="@+id/fabMode">
 
         <TextView
             android:id="@+id/txtvCountry"
@@ -60,5 +60,5 @@
         android:contentDescription="@string/fap_icon_description"
         android:src="@drawable/ic_mode"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
