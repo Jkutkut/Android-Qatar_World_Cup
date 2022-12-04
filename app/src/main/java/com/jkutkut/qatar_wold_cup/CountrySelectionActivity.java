@@ -1,11 +1,13 @@
 package com.jkutkut.qatar_wold_cup;
 
+import androidx.annotation.NonNull;
 import androidx.constraintlayout.helper.widget.Flow;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
@@ -86,14 +88,10 @@ public class CountrySelectionActivity extends CustomActivity implements View.OnC
         CustomButton btnCountry;
         int[] btnIds = new int[countries.length];
         for (int i = 0; i < countries.length; i++) {
-            // TODO fix style of btns
-//            btnCountry = new CustomButton(this, null, R.style.btn_table_element);
             btnCountry = new CustomButton(this);
-//            btnCountry.setLayoutParams(new ViewGroup.LayoutParams(
-//                    ViewGroup.LayoutParams.WRAP_CONTENT,
-//                    ViewGroup.LayoutParams.WRAP_CONTENT
-//            ));
+            btnCountry.setBackgroundResource(android.R.color.transparent);
             btnCountry.setId(View.generateViewId());
+            btnCountry.setAllCaps(false);
             btnCountry.setText(countries[i]);
             btnCountry.setOnClickListener(this);
             constraintLayoutActivity.addView(btnCountry);
@@ -147,7 +145,7 @@ public class CountrySelectionActivity extends CustomActivity implements View.OnC
 
     // ********* SESSION *********
     @Override
-    protected void onSaveInstanceState(Bundle outState) {
+    protected void onSaveInstanceState(@NonNull Bundle outState) {
         super.onSaveInstanceState(outState);
         outState.putStringArray(COUNTRIES_KEY, countries);
         outState.putInt(TEAM_SIDE_KEY, teamSide);
