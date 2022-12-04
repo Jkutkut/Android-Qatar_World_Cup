@@ -16,6 +16,7 @@ public class QatarApplication extends Application {
     public void onCreate() {
         super.onCreate();
         resultData = new MatchResultList();
+        resultData.loadData(this);
     }
 
     // ********* Getters *********

@@ -5,6 +5,7 @@
     <string name="match_phase_semifinals">Semifinales</string>
     <string name="match_phase_quarterfinals">Cuartos</string>
     <string name="match_phase_round_of_16">Octavos</string>
+    <string name="match_phase_groups">Fase de grupos</string>
 
     <string name="team_germany">Alemania</string>
     <string name="team_saudi_arabia">Arabia Saudí</string>
@@ -22,9 +23,9 @@
     <string name="team_spain">España</string>
     <string name="team_usa">Estados Unidos</string>
     <string name="team_france">Francia</string>
-    <string name="team_gales">Gales</string>
+    <string name="team_wales">Gales</string>
     <string name="team_ghana">Ghana</string>
-    <string name="team_holland">Holanda</string>
+    <string name="team_netherlands">Paises Bajos</string>
     <string name="team_uk">Inglaterra</string>
     <string name="team_iran">Irán</string>
     <string name="team_japan">Japón</string>
@@ -35,7 +36,7 @@
     <string name="team_qatar">Qatar</string>
     <string name="team_senegal">Senegal</string>
     <string name="team_serbia">Serbia</string>
-    <string name="team_Switzerland">Suiza</string>
+    <string name="team_switzerland">Suiza</string>
     <string name="team_tunisia">Túnez</string>
     <string name="team_uruguay">Uruguay</string>
 </resources>

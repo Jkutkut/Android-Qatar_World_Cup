@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="match_phase">
+        <item>@string/match_phase_groups</item>
         <item>@string/match_phase_round_of_16</item>
         <item>@string/match_phase_quarterfinals</item>
         <item>@string/match_phase_semifinals</item>
@@ -25,9 +26,9 @@
         <item>@string/team_spain</item>
         <item>@string/team_usa</item>
         <item>@string/team_france</item>
-        <item>@string/team_gales</item>
+        <item>@string/team_wales</item>
         <item>@string/team_ghana</item>
-        <item>@string/team_holland</item>
+        <item>@string/team_netherlands</item>
         <item>@string/team_uk</item>
         <item>@string/team_iran</item>
         <item>@string/team_japan</item>
@@ -38,7 +39,7 @@
         <item>@string/team_qatar</item>
         <item>@string/team_senegal</item>
         <item>@string/team_serbia</item>
-        <item>@string/team_Switzerland</item>
+        <item>@string/team_switzerland</item>
         <item>@string/team_tunisia</item>
         <item>@string/team_uruguay</item>
     </string-array>
