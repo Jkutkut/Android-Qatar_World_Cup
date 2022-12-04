@@ -124,7 +124,7 @@
             app:layout_constraintEnd_toStartOf="@id/txtv_goal_separator"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-        <!--    TODO: Change hint based on selected team    -->
+
         <TextView
             android:id="@+id/txtv_goal_separator"
             style="@style/txtv_style"

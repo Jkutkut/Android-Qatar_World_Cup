@@ -36,7 +36,7 @@
     <string name="save">Save</string>
     <string name="cancel">Cancel</string>
     <string name="txtv_result_default">Results:</string>
-
+    <string name="etxtGoalsHintCountry">%1$s\'s goals</string>
 
     <string name="match_phase_final">Final</string>
     <string name="match_phase_third_place">Third place</string>

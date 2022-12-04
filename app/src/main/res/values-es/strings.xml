@@ -32,6 +32,7 @@
     <string name="save">Guardar</string>
     <string name="cancel">Cancelar</string>
     <string name="txtv_result_default">Resultados:</string>
+    <string name="etxtGoalsHintCountry">Goles de %1$s</string>
 
     <string name="match_phase_final">Final</string>
     <string name="match_phase_third_place">Tercer puesto</string>

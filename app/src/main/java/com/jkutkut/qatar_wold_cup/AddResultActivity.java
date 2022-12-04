@@ -72,9 +72,19 @@ public class AddResultActivity extends CustomActivity {
                     Intent i = result.getData();
                     if (i == null) return;
                     Bundle data = i.getExtras();
-                    Button btnTeam = (data.getInt(TEAM_SIDE) == TEAM_1) ? btnTeam1 : btnTeam2;
-                    if (data.getString(CountrySelectionActivity.COUNTRY_KEY) != null)
-                        btnTeam.setText(data.getString(CountrySelectionActivity.COUNTRY_KEY));
+                    String country = data.getString(CountrySelectionActivity.COUNTRY_KEY);
+                    if (country == null) return;
+                    Button btnTeam;
+                    EditText etxtGoals;
+                    if (data.getInt(TEAM_SIDE) == TEAM_1) {
+                        btnTeam = btnTeam1;
+                        etxtGoals = etxtGoalsTeam1;
+                    } else {
+                        btnTeam = btnTeam2;
+                        etxtGoals = etxtGoalsTeam2;
+                    }
+                    btnTeam.setText(data.getString(CountrySelectionActivity.COUNTRY_KEY));
+                    etxtGoals.setHint(String.format(getString(R.string.etxtGoalsHintCountry), country));
                 }
             }
         );
@@ -240,5 +250,13 @@ public class AddResultActivity extends CustomActivity {
         spnPhase.setSelection(savedInstanceState.getInt(PHASE_KEY));
         etxtGoalsTeam1.setText(savedInstanceState.getString(GOALS_1_KEY));
         etxtGoalsTeam2.setText(savedInstanceState.getString(GOALS_2_KEY));
+
+        // Hint
+        String team1 = btnTeam1.getText().toString();
+        String team2 = btnTeam2.getText().toString();
+        if (!team1.equals(getString(R.string.btnTeamDefault)))
+            etxtGoalsTeam1.setHint(String.format(getString(R.string.etxtGoalsHintCountry), team1));
+        if (!team2.equals(getString(R.string.btnTeamDefault)))
+            etxtGoalsTeam2.setHint(String.format(getString(R.string.etxtGoalsHintCountry), team2));
     }
 }
