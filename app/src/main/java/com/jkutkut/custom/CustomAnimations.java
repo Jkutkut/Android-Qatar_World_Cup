@@ -3,6 +3,7 @@ package com.jkutkut.custom;
 import android.annotation.SuppressLint;
 import android.graphics.PorterDuff;
 import android.view.MotionEvent;
+import android.view.View;
 import android.widget.Button;
 
 
@@ -12,18 +13,28 @@ public class CustomAnimations {
      * @param btn The button to change its background color.
      * @param color The color to change the background to.
      */
+    public static void setBtnClickFeedback(Button btn, int color) {
+        setBtnClickFeedback(btn, btn, color);
+    }
+
+    /**
+     * Changes the background of the given button when the given view is touched.
+     * @param btn The button to change its background color.
+     * @param view The view to listen to touch events.
+     * @param color The color to change the background to.
+     */
     @SuppressLint("ClickableViewAccessibility")
-    protected static void setBtnClickFeedback(Button btn, int color) {
-        btn.setOnTouchListener((v, event) -> {
+    public static void setBtnClickFeedback(Button btn, View view, int color) {
+        view.setOnTouchListener((v, event) -> {
             switch (event.getAction()) {
                 case MotionEvent.ACTION_DOWN: {
-                    v.getBackground().setColorFilter(color, PorterDuff.Mode.SRC_ATOP);
-                    v.invalidate();
+                    btn.getBackground().setColorFilter(color, PorterDuff.Mode.SRC_ATOP);
+                    btn.invalidate();
                     break;
                 }
                 case MotionEvent.ACTION_UP: {
-                    v.getBackground().clearColorFilter();
-                    v.invalidate();
+                    btn.getBackground().clearColorFilter();
+                    btn.invalidate();
                     break;
                 }
             }

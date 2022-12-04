@@ -2,7 +2,6 @@ package com.jkutkut.qatar_wold_cup;
 
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
-import androidx.fragment.app.FragmentContainerView;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
@@ -13,6 +12,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.jkutkut.custom.CustomActivity;
+import com.jkutkut.custom.CustomAnimations;
 import com.jkutkut.custom.CustomButton;
 import com.jkutkut.qatar_wold_cup.data.MatchResult;
 import com.jkutkut.qatar_wold_cup.data.MatchResultList;
@@ -62,6 +62,7 @@ public class SeeResultActivity extends CustomActivity {
 
         // ********* Animations *********
         btnSeeResults.setClickFeedback(getColor(R.color.qatar_light));
+        CustomAnimations.setBtnClickFeedback(btnSeeResults, txtvCountry, getColor(R.color.qatar_light));
     }
 
     private void handleSeeResults() {

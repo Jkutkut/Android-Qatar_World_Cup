@@ -82,6 +82,10 @@ public class CountrySelectionActivity extends CustomActivity implements View.OnC
             setResult(RESULT_CANCELED);
             finish();
         });
+
+        // ********* Animations *********
+        btnSave.setClickFeedback(getColor(R.color.qatar_light));
+        btnCancel.setClickFeedback(getColor(R.color.qatar_light));
     }
 
     private void initFlowCountries() {

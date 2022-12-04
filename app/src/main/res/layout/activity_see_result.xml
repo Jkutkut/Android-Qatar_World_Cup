@@ -40,21 +40,10 @@
         android:id="@+id/txtv_result"
         style="@style/txtv_style.subtitle"
         android:layout_marginTop="@dimen/normal_margin"
-        android:text="Results:"
+        android:text="@string/txtv_result_default"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/container_query" />
-
-<!--    <androidx.fragment.app.FragmentContainerView-->
-<!--        android:id="@+id/fragmentContainer"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginTop="@dimen/normal_margin"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/txtv_result"-->
-<!--        android:name="com.jkutkut.qatar_wold_cup.ResultFragment"-->
-<!--        tools:layout="@layout/fragment_result" />-->
 
     <LinearLayout
         android:id="@+id/fragmentContainer"
