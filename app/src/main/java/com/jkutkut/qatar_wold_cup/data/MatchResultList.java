@@ -6,6 +6,11 @@ import com.jkutkut.qatar_wold_cup.R;
 
 import java.util.ArrayList;
 
+/**
+ * Class to handle multiple match results.
+ *
+ * @author jkutkut
+ */
 public class MatchResultList {
     ArrayList<MatchResult> matchResults;
 
@@ -17,6 +22,11 @@ public class MatchResultList {
         matchResults.add(result);
     }
 
+    /**
+     * Obtain all matches played by a team.
+     * @param team Team to search for.
+     * @return List of matches played by the team.
+     */
     public ArrayList<MatchResult> getResultsByTeam(String team) {
         ArrayList<MatchResult> results = new ArrayList<>();
         for (MatchResult match : matchResults)
@@ -25,6 +35,11 @@ public class MatchResultList {
         return results;
     }
 
+    /**
+     * Load all the matches into the list.
+     * @param context Context to load the matches from.
+     * Note: This method requires the context to obtain the translation of the strings.
+     */
     public void loadData(Context context) {
         Object[][] data = {
             {R.string.match_phase_round_of_16, "20/11/2022 17:00", R.string.team_qatar, 0, R.string.team_ecuador, 2},

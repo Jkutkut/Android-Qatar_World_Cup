@@ -139,11 +139,6 @@ public class AddResultActivity extends CustomActivity {
         updateDate();
         updateTime();
 
-        // TODO set click feedback
-//        btnDate.setClickFeedback(getColor(R.attr.btn_clear_clicked));
-//        btnTime.setClickFeedback(getColor(R.attr.btn_clear_clicked));
-//        btnTeam1.setClickFeedback(getColor(R.attr.btn_clear_clicked));
-//        btnTeam2.setClickFeedback(getColor(R.attr.btn_clear_clicked));
         btnSave.setClickFeedback(getColor(R.color.qatar_light));
         btnClear.setClickFeedback(getColor(R.color.qatar_light));
     }

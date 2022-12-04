@@ -6,10 +6,12 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 
-
+/**
+ * Logic to add animations to different views.
+ */
 public class CustomAnimations {
     /**
-     * Changes the background of the view by the given color when the user touches it.
+     * Changes the background of the given button by the given color when the user touches it.
      * @param btn The button to change its background color.
      * @param color The color to change the background to.
      */

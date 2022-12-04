@@ -10,7 +10,7 @@ package com.jkutkut.qatar_wold_cup.data;
  */
 public class MatchResult {
 
-    private String phase;
+    private final String phase;
     private final String team1;
     private final String team2;
     private final int score1;
@@ -50,17 +50,11 @@ public class MatchResult {
         return date;
     }
 
-    @Override
-    public String toString() {
-        return "MatchResult{" +
-                "team1='" + team1 + '\'' +
-                ", team2='" + team2 + '\'' +
-                ", score1=" + score1 +
-                ", score2=" + score2 +
-                ", date='" + date + '\'' +
-                '}';
-    }
-
+    /**
+     * Check if the given team played this match.
+     * @param team The team to check.
+     * @return True if the team played this match, false otherwise.
+     */
     public boolean teamPlayed(String team) {
         return team1.equalsIgnoreCase(team) || team2.equalsIgnoreCase(team);
     }
