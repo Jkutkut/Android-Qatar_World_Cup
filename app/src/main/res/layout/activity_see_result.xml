@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/activity_style.background"
+    tools:context=".SeeResultActivity">
+
+    <TextView
+        android:id="@+id/see_results_title"
+        style="@style/txtv_style.title"
+        android:text="@string/see_results_title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/container_query"
+        style="@style/container"
+        android:orientation="horizontal"
+        android:weightSum="10"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fabMode">
+
+        <TextView
+            android:id="@+id/txtvCountry"
+            style="@style/txtv_style"
+            android:layout_width="wrap_content"
+            android:layout_weight="7"
+            android:text="@string/selectTeam" />
+
+        <com.jkutkut.custom.CustomButton
+            android:id="@+id/btnSeeResults"
+            style="@style/btn_style.qatar"
+            android:layout_width="wrap_content"
+            android:layout_weight="3"
+            android:text="@string/selectTeam" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/txtv_result"
+        style="@style/txtv_style.subtitle"
+        android:layout_marginTop="@dimen/normal_margin"
+        android:text="@string/txtv_result_default"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/container_query" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/normal_margin"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtv_result">
+
+        <LinearLayout
+            android:id="@+id/fragmentContainer"
+            style="@style/container"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtv_result" />
+    </ScrollView>
+
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabMode"
+        style="@style/floating_btn_style.qatar"
+        android:contentDescription="@string/fap_icon_description"
+        android:src="@drawable/ic_mode"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,3 +1,80 @@
 <resources>
-    <string name="app_name">Qatar_Wold_Cup</string>
+    <string name="app_name" translatable="false">Qatar_Wold_Cup 2022</string>
+    <string name="add_result_btn">Add Result</string>
+    <string name="see_results_btn">See Results</string>
+    <string name="qatar_logo_description">qatar_logo</string>
+    <string name="fap_icon_description">Toggle between dark to light modes.</string>
+    <string name="add_result_title">Add a result</string>
+    <string name="date_format" translatable="false">dd/MM/yyyy</string>
+    <string name="time_format" translatable="false">HH:mm</string>
+    <string name="btnTeamDefault">@string/selectTeam</string>
+    <string name="selectTeam">Select team</string>
+    <string name="select_country_title">Team Selection</string>
+    <string name="country_selection_error">Please select a correct country</string>
+    <string name="country_selection_error_same_country">You can not choose the same team twice</string>
+    <string name="see_results_title">See results by country</string>
+    <string name="clearData">Clear data</string>
+    <string name="alert_team1_missing">Please, select the first team</string>
+    <string name="alert_team2_missing">Please, select the second team</string>
+    <string name="alert_goals_team1_missing">Please add the score for the first team</string>
+    <string name="alert_goals_team2_missing">Please add the score for the second team</string>
+    <string name="alert_goals_team1_invalid">The goals of the first team should be whole</string>
+    <string name="alert_goals_team2_invalid">The goals of the second team should be whole</string>
+    <string name="error_date_in_future">The match can not occur in the future</string>
+    <string name="alert_result_saved">Result salved</string>
+    <string name="date_title">Date and time of the match:</string>
+    <string name="teams_title">Teams:</string>
+    <string name="phase_label">Phase:</string>
+    <string name="score_title">Score:</string>
+    <string name="etxtGoalsTeam1">Goals first team</string>
+    <string name="etxtGoalsTeam2">Goals second team</string>
+    <string name="separator_vs" translatable="false">vs</string>
+    <string name="separator" translatable="false">-</string>
+    <string name="save_result">Save Result</string>
+    <string name="clear_form">Clear form</string>
+    <string name="autocTxtViewCountryHint">Select the country</string>
+    <string name="save">Save</string>
+    <string name="cancel">Cancel</string>
+    <string name="txtv_result_default">Results:</string>
+    <string name="etxtGoalsHintCountry">%1$s\'s goals</string>
+
+    <string name="match_phase_final">Final</string>
+    <string name="match_phase_third_place">Third place</string>
+    <string name="match_phase_semifinals">Semifinals</string>
+    <string name="match_phase_quarterfinals">Quarterfinals</string>
+    <string name="match_phase_round_of_16">Round of 16</string>
+    <string name="match_phase_groups">Group stage</string>
+
+    <string name="team_germany">Germany</string>
+    <string name="team_saudi_arabia">Saudi Arabia</string>
+    <string name="team_argentina">Argentina</string>
+    <string name="team_australia">Australia</string>
+    <string name="team_belgium">Belgium</string>
+    <string name="team_brazil">Brazil</string>
+    <string name="team_cameroon">Cameroon</string>
+    <string name="team_canada">Canada</string>
+    <string name="team_south_korea">South Korea</string>
+    <string name="team_costa_rica">Costa Rica</string>
+    <string name="team_croatia">Croatia</string>
+    <string name="team_denmark">Denmark</string>
+    <string name="team_ecuador">Ecuador</string>
+    <string name="team_spain">Spain</string>
+    <string name="team_usa">USA</string>
+    <string name="team_france">France</string>
+    <string name="team_wales">Wales</string>
+    <string name="team_ghana">Ghana</string>
+    <string name="team_netherlands">Netherlands</string>
+    <string name="team_uk">England</string>
+    <string name="team_iran">Iran</string>
+    <string name="team_japan">Japan</string>
+    <string name="team_morocco">Morocco</string>
+    <string name="team_mexico">Mexico</string>
+    <string name="team_poland">Poland</string>
+    <string name="team_portugal">Portugal</string>
+    <string name="team_qatar">Qatar</string>
+    <string name="team_senegal">Senegal</string>
+    <string name="team_serbia">Serbia</string>
+    <string name="team_switzerland">Switzerland</string>
+    <string name="team_tunisia">Tunisia</string>
+    <string name="team_uruguay">Uruguay</string>
 </resources>

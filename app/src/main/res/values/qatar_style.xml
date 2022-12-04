@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="btn_style.qatar" parent="btn_style">
+        <item name="android:background">@drawable/round_gradient_btn</item>
+        <item name="android:textColor">?attr/text_with_bg</item>
+    </style>
+
+    <style name="floating_btn_style.qatar" parent="floating_btn_style">
+        <item name="android:backgroundTint">?attr/secondary_main_color</item>
+        <item name="tint">?attr/text_with_bg</item>
+    </style>
+
+    <style name="btn_table_element" parent="btn_style.clear">
+        <item name="android:layout_margin">@dimen/normal_margin</item>
+    </style>
+
+    <style name="date_picker_style.qatar" parent="date_picker_style">
+        <item name="colorPrimary">?attr/text_no_bg</item>
+        <item name="colorAccent">@color/qatar_light</item>
+    </style>
+
+    <style name="time_picker_style.qatar" parent="time_picker_style">
+        <item name="colorPrimary">?attr/text_no_bg</item>
+        <item name="colorAccent">@color/qatar_light</item>
+    </style>
+</resources>
