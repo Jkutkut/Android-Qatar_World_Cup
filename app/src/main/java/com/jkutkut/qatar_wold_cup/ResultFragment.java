@@ -12,7 +12,7 @@ import android.widget.TextView;
 import com.jkutkut.qatar_wold_cup.data.MatchResult;
 
 /**
- * A simple {@link Fragment} subclass.
+ * A simple {@link Fragment} subclass to display the result of a match.
  * Use the {@link ResultFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
@@ -33,17 +33,7 @@ public class ResultFragment extends Fragment {
     private String goals1;
     private String goals2;
 
-    // ********* UI Components *********
-    private TextView txtvPhase;
-    private TextView txtvDateTime;
-    private TextView txtvTeam1;
-    private TextView txtvTeam2;
-    private TextView txtvScore1;
-    private TextView txtvScore2;
-
-    public ResultFragment() {
-        // Required empty public constructor
-    }
+    public ResultFragment() {}
 
     /**
      * Use this factory method to create a new instance of this fragment with the provided
@@ -85,12 +75,12 @@ public class ResultFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_result, container, false);
 
         // ********* UI Components *********
-        txtvPhase = view.findViewById(R.id.txtvPhase);
-        txtvDateTime = view.findViewById(R.id.txtvDateTime);
-        txtvTeam1 = view.findViewById(R.id.txtvTeam1);
-        txtvTeam2 = view.findViewById(R.id.txtvTeam2);
-        txtvScore1 = view.findViewById(R.id.txtvScore1);
-        txtvScore2 = view.findViewById(R.id.txtvScore2);
+        TextView txtvPhase = view.findViewById(R.id.txtvPhase);
+        TextView txtvDateTime = view.findViewById(R.id.txtvDateTime);
+        TextView txtvTeam1 = view.findViewById(R.id.txtvTeam1);
+        TextView txtvTeam2 = view.findViewById(R.id.txtvTeam2);
+        TextView txtvScore1 = view.findViewById(R.id.txtvScore1);
+        TextView txtvScore2 = view.findViewById(R.id.txtvScore2);
 
         // ********* Set Text *********
         txtvPhase.setText(phase);

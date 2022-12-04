@@ -7,6 +7,8 @@ import com.jkutkut.qatar_wold_cup.data.MatchResultList;
 /**
  * This class is used to store the data of the application.
  * This way, all activities can access the same data.
+ *
+ * @author jkutkut
  */
 public class QatarApplication extends Application {
 

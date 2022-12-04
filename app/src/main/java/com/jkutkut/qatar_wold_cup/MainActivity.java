@@ -7,6 +7,11 @@ import android.os.Bundle;
 import com.jkutkut.custom.CustomActivity;
 import com.jkutkut.custom.CustomButton;
 
+/**
+ * Class with the logic of the main menu.
+ *
+ * @author jkutkut
+ */
 public class MainActivity extends CustomActivity {
 
     @Override
