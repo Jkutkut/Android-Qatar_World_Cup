@@ -93,6 +93,7 @@
     <Spinner
         android:id="@+id/spnPhase"
         style="@style/spinner_style"
+        android:layout_width="wrap_content"
         android:layout_marginTop="@dimen/normal_margin"
         android:entries="@array/match_phase"
         app:layout_constraintTop_toBottomOf="@id/container_teams"
