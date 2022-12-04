@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/activity_style.background"
+    tools:context=".AddResultActivity">
+
+    <TextView
+        android:id="@+id/add_result_title"
+        style="@style/txtv_style.title"
+        android:text="@string/add_result_title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/container_datetime_phase"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/add_result_title"
+        android:baselineAligned="false">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/date_title"
+                style="@style/txtv_style.subtitle"
+                android:layout_width="wrap_content"
+                android:layout_marginTop="@dimen/normal_margin"
+                android:text="@string/date_title"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <LinearLayout
+                android:id="@+id/container_datetime"
+                style="@style/container"
+                android:orientation="horizontal"
+                android:weightSum="10"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/date_title">
+
+                <com.jkutkut.custom.CustomButton
+                    android:id="@+id/btnDate"
+                    style="@style/btn_style.clear"
+                    android:layout_width="wrap_content"
+                    android:layout_weight="5"
+                    android:text="@string/date_format"/>
+                <com.jkutkut.custom.CustomButton
+                    android:id="@+id/btnTime"
+                    style="@style/btn_style.clear"
+                    android:layout_width="wrap_content"
+                    android:layout_weight="5"
+                    android:text="@string/time_format"/>
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+            <TextView
+                android:id="@+id/textView"
+                style="@style/txtv_style.subtitle"
+                android:layout_width="wrap_content"
+                android:layout_marginTop="@dimen/normal_margin"
+                android:text="@string/phase_label"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Spinner
+                android:id="@+id/spnPhase"
+                style="@style/spinner_style"
+                android:layout_marginTop="@dimen/normal_margin"
+                android:entries="@array/match_phase"
+                android:popupBackground="?attr/colorOnBackground"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textView" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/teams_title"
+        style="@style/txtv_style.subtitle"
+        android:layout_marginTop="@dimen/normal_margin"
+        android:text="@string/teams_title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/container_datetime_phase" />
+
+    <LinearLayout
+        android:id="@+id/container_teams"
+        style="@style/container"
+        android:orientation="horizontal"
+        android:weightSum="10"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/teams_title">
+
+        <com.jkutkut.custom.CustomButton
+            android:id="@+id/btnTeam1"
+            style="@style/btn_style.clear"
+            android:layout_width="wrap_content"
+            android:layout_weight="5"
+            android:text="@string/btnTeamDefault" />
+
+        <TextView
+            style="@style/txtv_style"
+            android:layout_width="wrap_content"
+            android:text="@string/separator_vs" />
+
+        <com.jkutkut.custom.CustomButton
+            android:id="@+id/btnTeam2"
+            style="@style/btn_style.clear"
+            android:layout_width="wrap_content"
+            android:layout_weight="5"
+            android:text="@string/btnTeamDefault" />
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/container_goals"
+        style="@style/container"
+        android:orientation="horizontal"
+        app:flow_horizontalAlign="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/container_teams">
+
+        <EditText
+            android:id="@+id/etxtGoalsTeam1"
+            style="@style/etxt_style"
+            android:hint="@string/etxtGoalsTeam1"
+            android:inputType="numberDecimal"
+            app:layout_constraintEnd_toStartOf="@id/txtv_goal_separator"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:autofillHints="" />
+
+        <TextView
+            android:id="@+id/txtv_goal_separator"
+            style="@style/txtv_style"
+            android:layout_width="wrap_content"
+            android:hint="@string/separator"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/etxtGoalsTeam2"
+            style="@style/etxt_style"
+            android:hint="@string/etxtGoalsTeam2"
+            android:inputType="numberDecimal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/txtv_goal_separator"
+            app:layout_constraintTop_toTopOf="parent"
+            android:autofillHints=""/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:id="@+id/container_buttons"
+        style="@style/container"
+        android:orientation="horizontal"
+        android:weightSum="10"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <com.jkutkut.custom.CustomButton
+            android:id="@+id/btnSave"
+            style="@style/btn_style.qatar"
+            android:layout_weight="5"
+            android:text="@string/save_result" />
+
+        <com.jkutkut.custom.CustomButton
+            android:id="@+id/btnClear"
+            style="@style/btn_style.qatar"
+            android:layout_weight="5"
+            android:text="@string/clear_form" />
+    </LinearLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabMode"
+        style="@style/floating_btn_style.qatar"
+        android:contentDescription="@string/fap_icon_description"
+        android:src="@drawable/ic_mode"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
