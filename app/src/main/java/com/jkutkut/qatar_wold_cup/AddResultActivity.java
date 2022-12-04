@@ -20,12 +20,17 @@ import com.jkutkut.qatar_wold_cup.data.MatchResult;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
+/**
+ * Class responsible for adding a new match result.
+ *
+ * @author jkutkut
+ */
 public class AddResultActivity extends CustomActivity {
 
     public static final String TEAM_SIDE = "teamSide";
     private static final int TEAM_1 = 1;
     private static final int TEAM_2 = 2;
-    public static final String OPONENT = "oponent";
+    public static final String OPPONENT = "opponent";
 
     // ********* UI Components *********
     private CustomButton btnDate;
@@ -61,6 +66,7 @@ public class AddResultActivity extends CustomActivity {
 
         // ********* DateTime Utils *********
         calendar = Calendar.getInstance();
+        // Note: We are using a R.string resource to force the format based on our preferences.
         sdfDate = new SimpleDateFormat(getString(R.string.date_format));
         sdfTime = new SimpleDateFormat(getString(R.string.time_format));
 
@@ -112,7 +118,6 @@ public class AddResultActivity extends CustomActivity {
             calendar.set(Calendar.MINUTE, minute);
             updateTime();
         };
-
         btnDate.setOnClickListener(view -> new DatePickerDialog(
             AddResultActivity.this,
             R.style.date_picker_style_qatar,
@@ -139,10 +144,31 @@ public class AddResultActivity extends CustomActivity {
         updateDate();
         updateTime();
 
+        // ********* Animations *********
         btnSave.setClickFeedback(getColor(R.color.qatar_light));
         btnClear.setClickFeedback(getColor(R.color.qatar_light));
     }
 
+    // ********* Listeners *********
+
+    /**
+     * Clears the form.
+     */
+    private void clearForm() {
+        calendar = Calendar.getInstance();
+        updateDate();
+        updateTime();
+        btnTeam1.setText(getString(R.string.btnTeamDefault));
+        btnTeam2.setText(getString(R.string.btnTeamDefault));
+        spnPhase.setSelection(0);
+        etxtGoalsTeam1.setText("");
+        etxtGoalsTeam2.setText("");
+    }
+
+    /**
+     * Verifies the input and adds a new match result.
+     * Sends an alert if the input is not valid. ({@link #alert(String)})
+     */
     private void saveResult() {
         if (calendar.getTimeInMillis() > System.currentTimeMillis()) {
             alert(getString(R.string.error_date_in_future));
@@ -189,37 +215,36 @@ public class AddResultActivity extends CustomActivity {
         finish();
     }
 
+    /**
+     * Create a boomerang activity to select a team.
+     * @param team The number of the team to select ({@link #TEAM_1} or {@link #TEAM_2})
+     */
     private void ask4team(int team) {
         Intent intent = new Intent(this, CountrySelectionActivity.class);
         intent.putExtra(TEAM_SIDE, team);
 
-        String oponent = ((team == TEAM_1) ? btnTeam2 : btnTeam1).getText().toString();
-        if (oponent.equals(getString(R.string.btnTeamDefault)))
-            oponent = null;
-        intent.putExtra(OPONENT, oponent);
+        String opponent = ((team == TEAM_1) ? btnTeam2 : btnTeam1).getText().toString();
+        if (opponent.equals(getString(R.string.btnTeamDefault)))
+            opponent = null;
+        intent.putExtra(OPPONENT, opponent);
 
         teamSelectorLauncher.launch(intent);
     }
 
     // ********* Utils *********
+
+    /**
+     * Updates the date according to the calendar.
+     */
     private void updateDate() {
         btnDate.setText(sdfDate.format(calendar.getTime()));
     }
 
+    /**
+     * Updates the time according to the calendar.
+     */
     private void updateTime() {
         btnTime.setText(sdfTime.format(calendar.getTime()));
-    }
-
-    private void clearForm() {
-        calendar = Calendar.getInstance();
-        updateDate();
-        updateTime();
-
-        btnTeam1.setText(getString(R.string.btnTeamDefault));
-        btnTeam2.setText(getString(R.string.btnTeamDefault));
-        spnPhase.setSelection(0);
-        etxtGoalsTeam1.setText("");
-        etxtGoalsTeam2.setText("");
     }
 
     // ********* Session *********
@@ -246,7 +271,7 @@ public class AddResultActivity extends CustomActivity {
         etxtGoalsTeam1.setText(savedInstanceState.getString(GOALS_1_KEY));
         etxtGoalsTeam2.setText(savedInstanceState.getString(GOALS_2_KEY));
 
-        // Hint
+        // Hint for the score
         String team1 = btnTeam1.getText().toString();
         String team2 = btnTeam2.getText().toString();
         if (!team1.equals(getString(R.string.btnTeamDefault)))

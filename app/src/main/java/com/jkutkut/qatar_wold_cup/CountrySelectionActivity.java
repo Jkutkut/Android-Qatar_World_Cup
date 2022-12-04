@@ -7,7 +7,6 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
@@ -47,7 +46,7 @@ public class CountrySelectionActivity extends CustomActivity implements View.OnC
 
         countries = getResources().getStringArray(R.array.teams);
         teamSide = getIntent().getIntExtra(AddResultActivity.TEAM_SIDE, -1);
-        oponent = getIntent().getStringExtra(AddResultActivity.OPONENT);
+        oponent = getIntent().getStringExtra(AddResultActivity.OPPONENT);
 
         if (oponent != null) {
             // Override countries without opponent
