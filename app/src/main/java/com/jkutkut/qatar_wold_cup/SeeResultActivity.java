@@ -2,6 +2,7 @@ package com.jkutkut.qatar_wold_cup;
 
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
+import androidx.annotation.NonNull;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
@@ -17,6 +18,11 @@ import com.jkutkut.custom.CustomButton;
 import com.jkutkut.qatar_wold_cup.data.MatchResult;
 import com.jkutkut.qatar_wold_cup.data.MatchResultList;
 
+/**
+ * Class with the logic to see the results of a team.
+ *
+ * @author jkutkut
+ */
 public class SeeResultActivity extends CustomActivity {
 
     // ********* UI Components *********
@@ -65,6 +71,10 @@ public class SeeResultActivity extends CustomActivity {
         CustomAnimations.setBtnClickFeedback(btnSeeResults, txtvCountry, getColor(R.color.qatar_light));
     }
 
+    /**
+     * Handles all the logic related to the button.
+     * Depending if a team has been selected, it will open the team selector or clear the form.
+     */
     private void handleSeeResults() {
         if (team == null) {
             Intent i = new Intent(this, CountrySelectionActivity.class);
@@ -74,6 +84,9 @@ public class SeeResultActivity extends CustomActivity {
             clearForm();
     }
 
+    /**
+     * Clear the activity form.
+     */
     private void clearForm() {
         team = null;
         txtvCountry.setText(getString(R.string.selectTeam));
@@ -81,6 +94,9 @@ public class SeeResultActivity extends CustomActivity {
         fragmentContainer.removeAllViews();
     }
 
+    /**
+     * Updates the UI with the selected team (if any).
+     */
     private void updateUIWithTeam() {
         if (team == null) return;
         txtvCountry.setText(team);
@@ -93,12 +109,13 @@ public class SeeResultActivity extends CustomActivity {
         for (MatchResult result : data.getResultsByTeam(team)) {
             ft.add(R.id.fragmentContainer, ResultFragment.newInstance(result));
         }
+        // Note: Just a single transaction without ft.addToBackStash(null) is international
         ft.commit();
     }
 
     // ********* Session *********
     @Override
-    protected void onSaveInstanceState(Bundle outState) {
+    protected void onSaveInstanceState(@NonNull Bundle outState) {
         super.onSaveInstanceState(outState);
         outState.putString(TEAM_KEY, team);
     }
