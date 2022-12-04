@@ -96,7 +96,8 @@
         android:layout_marginTop="@dimen/normal_margin"
         android:entries="@array/match_phase"
         app:layout_constraintTop_toBottomOf="@id/container_teams"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        android:popupBackground="?attr/colorOnBackground"/>
 
     <TextView
         android:id="@+id/score_title"

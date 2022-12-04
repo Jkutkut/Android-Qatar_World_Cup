@@ -19,7 +19,7 @@ import com.jkutkut.custom.CustomButton;
 import java.util.Arrays;
 
 public class CountrySelectionActivity extends CustomActivity implements View.OnClickListener {
-    // TODO add scroll to view in small screens
+
     public static final String COUNTRY_KEY = "country";
 
     // ********* UI Components *********

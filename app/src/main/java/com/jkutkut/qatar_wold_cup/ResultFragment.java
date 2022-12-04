@@ -68,22 +68,14 @@ public class ResultFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            phase = getArguments().getString(ARG_PHASE);
-            datetime = getArguments().getString(ARG_DATETIME);
-            team1 = getArguments().getString(ARG_TEAM1);
-            team2 = getArguments().getString(ARG_TEAM2);
-            goals1 = getArguments().getString(ARG_GOALS1);
-            goals2 = getArguments().getString(ARG_GOALS2);
-        }
-        else {
-            phase = "DEBUG"; // TODO remove this
-            datetime = "";
-            team1 = "";
-            team2 = "";
-            goals1 = "";
-            goals2 = "";
-        }
+        if (getArguments() == null)
+            return;
+        phase = getArguments().getString(ARG_PHASE);
+        datetime = getArguments().getString(ARG_DATETIME);
+        team1 = getArguments().getString(ARG_TEAM1);
+        team2 = getArguments().getString(ARG_TEAM2);
+        goals1 = getArguments().getString(ARG_GOALS1);
+        goals2 = getArguments().getString(ARG_GOALS2);
     }
 
     @Override
