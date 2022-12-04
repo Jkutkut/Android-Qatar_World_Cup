@@ -13,4 +13,14 @@
     <style name="btn_table_element" parent="btn_style.clear">
         <item name="android:layout_margin">@dimen/normal_margin</item>
     </style>
+
+    <style name="date_picker_style.qatar" parent="date_picker_style">
+        <item name="colorPrimary">?attr/text_no_bg</item>
+        <item name="colorAccent">@color/qatar_light</item>
+    </style>
+
+    <style name="time_picker_style.qatar" parent="time_picker_style">
+        <item name="colorPrimary">?attr/text_no_bg</item>
+        <item name="colorAccent">@color/qatar_light</item>
+    </style>
 </resources>

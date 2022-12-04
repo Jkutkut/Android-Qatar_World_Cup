@@ -22,8 +22,6 @@ import java.util.Calendar;
 
 public class AddResultActivity extends CustomActivity {
 
-    // TODO Fix UI to be more user friendly
-
     public static final String TEAM_SIDE = "teamSide";
     private static final int TEAM_1 = 1;
     private static final int TEAM_2 = 2;
@@ -107,7 +105,7 @@ public class AddResultActivity extends CustomActivity {
 
         btnDate.setOnClickListener(view -> new DatePickerDialog(
             AddResultActivity.this,
-            R.style.date_picker_style, // TODO
+            R.style.date_picker_style_qatar,
             date,
             calendar.get(Calendar.YEAR),
             calendar.get(Calendar.MONTH),
@@ -115,7 +113,7 @@ public class AddResultActivity extends CustomActivity {
         ).show());
         btnTime.setOnClickListener(view -> new TimePickerDialog(
             AddResultActivity.this,
-            // TODO
+            R.style.time_picker_style_qatar,
             time,
             calendar.get(Calendar.HOUR_OF_DAY),
             calendar.get(Calendar.MINUTE),
